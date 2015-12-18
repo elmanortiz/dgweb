@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Fotoportafolio" table="fotoportafolio">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-many field="idProyecto" target-entity="Proyecto" inversed-by="idFotoportafolio" fetch="LAZY">
+      <join-table name="fotoportafolio_proyecto">
+        <join-columns>
+          <join-column name="id_fotoportafolio" referenced-column-name="id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_proyecto" referenced-column-name="id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

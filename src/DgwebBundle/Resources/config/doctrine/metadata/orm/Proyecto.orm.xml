@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Proyecto" table="proyecto">
+    <indexes>
+      <index name="fk_proyecto_categoriaport1_idx" columns="id_categoriaport"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="titulo" type="string" column="titulo" length="200" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="contenido" type="string" column="contenido" length="10000" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idCategoriaport" target-entity="Categoriaport" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_categoriaport" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="idFotoportafolio" target-entity="Fotoportafolio" mapped-by="idProyecto" fetch="LAZY"/>
+  </entity>
+</doctrine-mapping>
