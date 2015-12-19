@@ -3,10 +3,11 @@
 namespace DgwebBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class ProyectoType extends AbstractType
+class ImagenProyectoType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,18 +16,13 @@ class ProyectoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titulo')
-            ->add('contenido')
-            ->add('idCategoriaport')
+            //->add('imagen')
+            //->add('proyecto')
                 
-           ->add('placas','collection',array(
-                'type' => new ImagenProyectoType(),
-                'label'=>' ',
-                'by_reference' => false,
-                'allow_add' => true,
-                'allow_delete' => true,
-                ))              
-           
+             ->add('file',null, array('label'=>'Imagen','required'=>false,
+                    'attr'=>array('class'=>'imagen'
+                        
+                    )))     
         ;
     }
     
@@ -36,7 +32,7 @@ class ProyectoType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'DgwebBundle\Entity\Proyecto'
+            'data_class' => 'DgwebBundle\Entity\ImagenProyecto'
         ));
     }
 
@@ -45,6 +41,6 @@ class ProyectoType extends AbstractType
      */
     public function getName()
     {
-        return 'dgwebbundle_proyecto';
+        return 'dgwebbundle_imagenproyecto';
     }
 }
