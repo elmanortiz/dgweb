@@ -1,4 +1,4 @@
-
+{% extends 'DgwebBundle:Layout:layout.html.twig' %}
 
 {% block titulo %}Modificar proyecto{% endblock %}
 
@@ -28,14 +28,16 @@
                     <div class="col-md-2" style="padding-left: 0px;">{{ form_label(edit_form.idcategoriablog) }}</div>
                     {{ form_widget(edit_form.idcategoriablog) }}
                 </div>
-                <div class="row" style="margin: 10px 0px; "> 
+                
+           
+                <div class="row" style="margin: 10px 0px; ">                   
                     <div class="col-md-12" style="padding-left: 0px;">
                         <div class="col-md-2" style="padding-left: 0px;">{{ form_label(edit_form.idimagen.file) }}</div>
                         <div class="col-md-10" style="padding-left: 0px;">{{ form_widget(edit_form.idimagen.file) }}</div>
                     </div>
 
-
                 </div>
+    
 
 
                 {#{{ form_row(form.nombre) }}
