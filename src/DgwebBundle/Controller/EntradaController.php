@@ -220,7 +220,7 @@ class EntradaController extends Controller
         $path  = $this->getRequest()->server->get('DOCUMENT_ROOT').'/dgwed/web/Photos/imagenblog/';
         $path2 = $this->container->getParameter('photo.imagenblog');    
        
-        
+         
 
         if ($editForm->isValid()) {
             
