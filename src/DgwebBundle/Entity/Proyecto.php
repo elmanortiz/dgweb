@@ -3,6 +3,9 @@
 namespace DgwebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Proyecto
@@ -34,6 +37,11 @@ class Proyecto
      * @ORM\Column(name="contenido", type="string", length=10000, nullable=true)
      */
     private $contenido;
+    
+     /**
+     * @Assert\File(maxSize="6000000")
+     */
+    private $file;
 
     /**
      * @var \Categoriaport
@@ -45,22 +53,7 @@ class Proyecto
      */
     private $idCategoriaport;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Fotoportafolio", mappedBy="idProyecto")
-     */
-    private $idFotoportafolio;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idFotoportafolio = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-
+    
     /**
      * Get id
      *
@@ -118,6 +111,26 @@ class Proyecto
     {
         return $this->contenido;
     }
+    
+     /**
+     * Sets file.
+     *
+     * @param UploadedFile $file
+     */
+    public function setFile(UploadedFile $file = null)
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * Get file.
+     *
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
 
     /**
      * Set idCategoriaport
@@ -142,38 +155,35 @@ class Proyecto
     {
         return $this->idCategoriaport;
     }
-
-    /**
-     * Add idFotoportafolio
-     *
-     * @param \DgwebBundle\Entity\Fotoportafolio $idFotoportafolio
-     *
-     * @return Proyecto
+    
+     /**
+     * @ORM\OneToMany(targetEntity="ImagenProyecto", mappedBy="proyecto", cascade={"persist", "remove"})
      */
-    public function addIdFotoportafolio(\DgwebBundle\Entity\Fotoportafolio $idFotoportafolio)
+    protected $placas;
+    public function __construct()
     {
-        $this->idFotoportafolio[] = $idFotoportafolio;
-
-        return $this;
-    }
-
-    /**
-     * Remove idFotoportafolio
-     *
-     * @param \DgwebBundle\Entity\Fotoportafolio $idFotoportafolio
-     */
-    public function removeIdFotoportafolio(\DgwebBundle\Entity\Fotoportafolio $idFotoportafolio)
+        //$this->placas = array(new EstudioRadTamPlaca(), new EstudioRadTamPlaca());
+        $this->placas = new ArrayCollection();
+    }           
+    public function getPlacas()
     {
-        $this->idFotoportafolio->removeElement($idFotoportafolio);
+        return $this->placas;
     }
-
-    /**
-     * Get idFotoportafolio
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getIdFotoportafolio()
+    public function setPlacas(\Doctrine\Common\Collections\Collection $placas)
     {
-        return $this->idFotoportafolio;
+        $this->placas = $placas;
+        foreach ($placas as $placa) {
+            $placa->setProyecto($this);
+        }
     }
+  /*  
+      public function removePlaca(ImagenProyecto $placa)
+    {
+        $this->placas->removeElement($placa);
+    }
+  */  
+   public function __toString() {
+    return $this->titulo ? $this->titulo : '';
+    }  
+
 }
