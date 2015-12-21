@@ -48,6 +48,14 @@ class Entrada
      * @ORM\Column(name="contenido", type="string", length=10000, nullable=true)
      */
     private $contenido;
+    
+    /**
+     * @var integer
+     *
+     *
+     * @ORM\OneToOne(targetEntity="Fotoblog", mappedBy="idEntrada", cascade={"persist", "remove"})
+     */
+    private $idimagen;
 
     /**
      * @var \Categoriablog
@@ -165,6 +173,30 @@ class Entrada
     public function getContenido()
     {
         return $this->contenido;
+    }
+    
+     /**
+     * Set idimagen
+     *
+     * @param \DgwebBundle\Entity\Fotoblog $idimagen
+     *
+     * @return Entrada
+     */
+    public function setIdimagen(\DgwebBundle\Entity\Fotoblog $idimagen)
+    {
+        $this->idimagen = $idimagen;
+
+        return $this;
+    }
+
+    /**
+     * Get idimagen
+     *
+     * @return \DgwebBundle\Entity\Fotoblog
+     */
+    public function getIdimagen()
+    {
+        return $this->idimagen;
     }
 
     /**

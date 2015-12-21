@@ -15,8 +15,12 @@ class FotoblogType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('idEntrada')
+           // ->add('nombre')
+           // ->add('idEntrada')
+           
+            ->add('file',null, array('label'=>'Foto del blog','required'=>false,
+                    'attr'=>array('class'=>'imagenblog'
+                    )))     
         ;
     }
     

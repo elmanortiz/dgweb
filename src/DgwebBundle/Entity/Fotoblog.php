@@ -3,6 +3,8 @@
 namespace DgwebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Fotoblog
@@ -27,11 +29,16 @@ class Fotoblog
      * @ORM\Column(name="nombre", type="string", length=255, nullable=true)
      */
     private $nombre;
+    
+     /**
+     * @Assert\File(maxSize="6000000")
+     */
+    private $file;
 
     /**
      * @var \Entrada
      *
-     * @ORM\ManyToOne(targetEntity="Entrada")
+     * @ORM\ManyToOne(targetEntity="Entrada", inversedBy="idimagen", cascade={"persist", "remove"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_entrada", referencedColumnName="id")
      * })
@@ -72,6 +79,26 @@ class Fotoblog
     public function getNombre()
     {
         return $this->nombre;
+    }
+    
+      /**
+     * Sets file.
+     *
+     * @param UploadedFile $file
+     */
+    public function setFile(UploadedFile $file = null)
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * Get file.
+     *
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
     }
 
     /**

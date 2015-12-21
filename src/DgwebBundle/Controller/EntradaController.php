@@ -47,11 +47,36 @@ class EntradaController extends Controller
         $entity = new Entrada();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-
+       
+        
+        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+            //$em->persist($entity);
+            //$em->flush();
+            
+         
+             if($entity->getIdimagen()->getFile()!=null){
+                 
+                    $path = $this->container->getParameter('photo.imagenblog');
+
+                    $fecha = date('Y-m-d His');
+                    $extension = $entity->getIdimagen()->getFile()->getClientOriginalExtension();
+                    $nombreArchivo = "imagenblog".$fecha.".".$extension;
+                    //$em->persist($entity);
+                    //$em->flush();
+                    //var_dump($path.$nombreArchivo);
+
+                    $entity->getIdimagen()->setNombre($nombreArchivo);
+                    $entity->getIdimagen()->setIdEntrada($entity);
+                    $entity->setFecha(new \DateTime('now'));
+                    $entity->getIdimagen()->getFile()->move($path,$nombreArchivo);
+                    
+                    
+                }
+                $em->persist($entity);
+                $em->flush();
+               
 
             return $this->redirect($this->generateUrl('admin_entrada_show', array('id' => $entity->getId())));
         }
@@ -148,6 +173,7 @@ class EntradaController extends Controller
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'idimagen'=>$entity->getIdimagen(),
         );
     }
 
@@ -189,9 +215,43 @@ class EntradaController extends Controller
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
+        
+        
+        $path  = $this->getRequest()->server->get('DOCUMENT_ROOT').'/dgwed/web/Photos/imagenblog/';
+        $path2 = $this->container->getParameter('photo.imagenblog');    
+       
+        
 
         if ($editForm->isValid()) {
-            $em->flush();
+            
+            
+            
+            
+             if($entity->getIdimagen()->getFile()!=null){
+                    $path = $this->container->getParameter('photo.imagenblog');
+                    
+                    // $file_path = $path.'/'.$entity->getNombre();
+                    //echo '*'.$row->getNombre().'*';
+                   // if(file_exists($file_path) && $entity->getNombre()!="") unlink($file_path);
+
+                    $fecha = date('Y-m-d His');
+                    $extension = $entity->getIdimagen()->getFile()->getClientOriginalExtension();
+                    $nombreArchivo = "imagenblog".$fecha.".".$extension;
+               
+                    $entity->getIdimagen()->setNombre($nombreArchivo);
+                    $entity->getIdimagen()->setIdEntrada($entity);
+                    $entity->setFecha(new \DateTime('now'));
+                    $entity->getIdimagen()->getFile()->move($path,$nombreArchivo);
+                    $em->persist($entity);
+                    $em->flush();
+                    
+                    
+                    // $file_path = $path.'/'.$entity->getNombre();        
+                    // unlink($file_path);         
+                    // $em->flush();
+                }
+                
+                 $em->flush();
 
             return $this->redirect($this->generateUrl('admin_entrada_edit', array('id' => $id)));
         }

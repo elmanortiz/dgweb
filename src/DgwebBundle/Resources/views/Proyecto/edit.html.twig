@@ -1,45 +1,5 @@
 
 
-{% block css %}
-  {#  {{parent()}} #}
-    <style>
-        
-        //Posicion del boton agregar
-        .placas>div:last-child {
-            position:absolute;
-        }
-      
-        .addItem{
-            position: absolute;
-            height: 50px;
-            float: right;
-            margin-bottom: 50px;
-            padding-bottom: 100px;
-            top: 250px;
-            left: 785px;
-        }
-        
-            .addItem div {
-                position: absolute;
-            }
-        
-        .col-md-4{
-            padding-top: 40px;
-        }
-       
-        .btn>div:last-child {
-            position:absolute;
-        }
-               
-        
-       .link{left: -48px;
-             top: 3px;
-         position: relative;
-       }
-  
-    </style>
-    
-    {% endblock %}
 
 {% block body -%}
     <h1>Modificar Proyecto</h1>
@@ -47,9 +7,10 @@
             {{ form_start(edit_form) }}
                 {{ form_errors(edit_form) }}
           <div class="row container-fluid">  
-             <div class="row col-md-6 " style="margin-bottom:50px">
+
+            <div class="row col-md-6 " style="margin-bottom:50px">
                 <div {{ form_row(edit_form.titulo) }}</div> 
-             </div>
+             </div>  
              <div class="row col-md-6 " style="margin-bottom:50px">
                 <div {{ form_row(edit_form.contenido) }}</div> 
              </div>

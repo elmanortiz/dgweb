@@ -5,6 +5,7 @@ namespace DgwebBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use DgwebBundle\Form\FotoblogType;
 
 class EntradaType extends AbstractType
 {
@@ -15,11 +16,27 @@ class EntradaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titulo')
-            ->add('escritapor')
-            ->add('fecha')
-            ->add('contenido')
-            ->add('idCategoriablog')
+            ->add('titulo', 'text', array(
+                'required' => true
+            ))
+            ->add('escritapor', 'text', array(
+                'required' => true
+            ))
+            //->add('fecha')
+            ->add('contenido', 'textarea',array(
+                  'required' => true,
+                  'attr' => array(
+                        'class' => 'tinymce',
+                        'data-theme' => 'bbcode' // Skip it if you want to use default theme
+                    ))
+            )
+            ->add('idimagen', new FotoblogType(), array(
+                'label' => ' '
+            ))
+            ->add('idcategoriablog','entity', array(
+                'label' => 'Elija una categoria',
+                'class'=>'DgwebBundle:Categoriablog'
+            ))
         ;
     }
     
