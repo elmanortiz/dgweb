@@ -1,0 +1,134 @@
+{#{% extends '::base.html.twig' %}#}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {%block head -%} 
+            {% block title -%}<title>{% block titlename -%}Digitality Garage | Think, Define, Design.{% endblock %}</title>{% endblock %}
+            {% block meta -%}
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <!-- Las 3 meta tags de arriba siempre tienen que incluirse y todo lo demas tiene que venir despues -->
+                <meta name="description" content="We are a great Agency, check us out.">
+            {% endblock%}
+
+            <!-- Declaracion de Archivo de Bootstrap -->	
+            {% block css -%}    
+                {#<link rel="stylesheet" href="{{ asset('Resources/bValidator-0.73/themes/bvalidator.theme.bootstrap.rt.css') }}" />#}
+                <link rel="stylesheet" href="{{ asset('Resources/css/bootstrap.css') }}" />
+                <link rel="stylesheet" href="{{ asset('Resources/css/style.css') }}" />
+            {% endblock %}
+        {% endblock%}
+    </head>
+    <body>
+        {% block navigation -%}
+            {% include 'DgwebBundle:Layout:navbar.html.twig'%}
+        {% endblock %}
+        {% block body -%}            
+        {% endblock %}
+        {% block sliderpc -%}            
+        {% endblock %}
+        {% block slidermov -%}            
+        {% endblock %}
+        {% block contenedorservicios -%}            
+        {% endblock %}
+        {% block contabout -%}            
+        {% endblock %}
+        {% block contservices -%}            
+        {% endblock %}
+        {% block contportafolio -%}            
+        {% endblock %}
+        {% block contblog -%}            
+        {% endblock %}
+        {% block contteam -%}            
+        {% endblock %}
+        {% block contcontact -%}            
+        {% endblock %}
+        {% block contcareers -%}            
+        {% endblock %}
+        {% block clientes -%}            
+        {% endblock %}
+        {% block estaditicas -%}            
+        {% endblock %}
+        {% block instagram -%}            
+        {% endblock %}
+        {% block footer -%} 
+            {% include 'DgwebBundle:Layout:footer.html.twig'%}
+        {% endblock %}
+
+        {% block javascripts_step %}
+            {#<script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script>
+            <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/jquery.bvalidator.js')}}"></script>
+            <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/bvalidator.lang.es.js')}}" ></script>
+            <script src="{{ asset('Resources/funciones_validacion/usuario.js') }}"></script>
+            <script src="{{asset('http://snapwidget.com/js/snapwidget.js')}}"></script>
+            <!-- jQuery (Necesario para que los Plugins de Bootstrap) -->
+            <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')}}"></script>
+            <!-- Aqui estan todos los Plugins que contiene el Framework de Boostrap -->
+            <script src="{{asset('Resources/js/bootstrap.js')}}"></script>
+            <script>
+                $(document).ready(function () {
+                    validarUsuario();
+                });
+            </script>#}
+
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')}}"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="{{asset('Resources/js/bootstrap.min.js')}}"></script>
+            <!-- Javascript Archivos -->
+            <script src="{{asset('Resources/js/scrollReveal.js')}}"></script>
+            <script>
+                window.sr = new scrollReveal();
+            </script>
+            <!-- Find Javascript Archivos -->
+            <script type="text/javascript">
+                $(document).scroll(function () {
+                    var y = $(this).scrollTop();
+                    if (y > 200) {
+                        $('.bottomMenu').fadeIn();
+                    } else {
+                        $('.bottomMenu').fadeOut();
+                    }
+                });
+            </script>
+            
+
+            <script src="{{ asset('Resources/js/typed.js')}}" type="text/javascript"></script>
+            {#<script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script>#}
+            <script>
+            $(function () {
+                $(".element").typed({
+                    strings: ["<strong>creative</strong>", "<strong>developers</strong>", "<strong>designers</strong>", "<strong>digitality garage.</strong>"],
+                    startDelay: 2000,
+                    typeSpeed: 100,
+                    backDelay: 1000,
+                    loop: false,
+                    contentType: 'html', // or text
+                    // defaults to false for infinite loop
+                    loopCount: false,
+                    callback: function () {
+                        foo();
+                    },
+                    resetCallback: function () {
+                        newTyped();
+                    }
+                });
+
+                $(".reset").click(function () {
+                    $("#typed").typed('reset');
+                });
+
+            });
+
+            function newTyped() { /* A new typed object */
+            }
+
+            function foo() {
+                console.log("Callback");
+            }
+
+            </script>
+        {% endblock %}
+    </body>
+</html>
