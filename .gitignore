@@ -11,12 +11,9 @@
 /bin/
 /composer.phar
 
-# netbeans
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
+echo /nbproject/private/config.properties >> .gitignore
+echo /nbproject/private/private.properties >> .gitignore
+echo /nbproject/private/private.xml >> .gitignore
+echo /nbproject/project.properties >> .gitignore
+echo /nbproject/project.xml >> .gitignore
 
