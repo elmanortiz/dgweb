@@ -4,9 +4,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300);
-/*font-family: 'Montserrat', sans-serif;
-font-family: 'Open Sans', sans-serif;*/
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -1085,8 +1082,8 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -1106,8 +1103,8 @@ a {
 }
 a:hover,
 a:focus {
-  color: #23527c;
-  text-decoration: underline;
+  color: #FFD24C;
+  text-decoration: none;
 }
 a:focus {
   outline: thin dotted;
@@ -4545,7 +4542,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
@@ -4584,10 +4581,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #ddd;
+  background-color: #F6F6F6;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #888;
+  background-color: #FFD24C;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {

@@ -10,3 +10,10 @@
 /vendor/
 /bin/
 /composer.phar
+
+echo /nbproject/private/config.properties >> .gitignore
+echo /nbproject/private/private.properties >> .gitignore
+echo /nbproject/private/private.xml >> .gitignore
+echo /nbproject/project.properties >> .gitignore
+echo /nbproject/project.xml >> .gitignore
+
