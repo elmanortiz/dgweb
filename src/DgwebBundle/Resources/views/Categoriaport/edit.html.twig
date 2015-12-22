@@ -1,6 +1,7 @@
-{% extends '::base.html.twig' %}
+{% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
+{% block titulo %}Editar Categoria Blog{% endblock %}
 
-{% block body -%}
+{% block contenido -%}
     <h1>Categoriaport edit</h1>
 
     {{ form(edit_form) }}
