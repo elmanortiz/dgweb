@@ -23,7 +23,7 @@
                         
                         float: right;
                         margin-bottom: 50px;
-                        top: 425px;
+                        top: 600px;
                         left: 383px;
                     }
 
@@ -75,7 +75,7 @@
      <div class="container-fluid" style="background-color: #F6F6F6;">
          
 	<!-- Footer Desktop -->  #}
-	<div class="container" style="background-color: #F6F6F6; padding-top:60px; padding-bottom: 1px;">
+	<div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">
 		
    
         <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">MODIFICAR PROYECTO</h2>
@@ -102,13 +102,13 @@
 
                       {% for key, placa in edit_form.placas %}
                                         
-                       <div class="col-md-12">
-                         <div class="panel bg-grd-light" data-fill-color="true">
-                            <div class="panel-body">
-                                 <img class="embed-responsive-item" itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{placas[key].imagen}}" alt="dummy image"> 
+                       <div class="col-md-4">
+                         
+                            
+                                 <img class="embed-responsive-item" style="width: 100%; margin-top: 0px;"itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{placas[key].imagen}}" alt="dummy image"> 
                                   {{ form_row(placa) }}   
  
-                            </div>
+                           
                          </div>
                        </div>        
                        {% endfor %}
@@ -217,7 +217,7 @@ function addTagForm(collectionHolder, $newLinkLi) {
     collectionHolder.data('index', index + 1);
 
     // Display the form in the page in an li, before the "Add a tag" link li
-    var $newFormLi = $('<div class="col-md-4"></div>').append(newForm);
+    var $newFormLi = $('<div class="col-md-4"><img src="http://placehold.it/1900x600" style="width: 100%;"></div>').append(newForm);
     $newLinkLi.before($newFormLi);
     
 

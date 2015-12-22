@@ -38,6 +38,7 @@ class Proyecto
      */
     private $contenido;
     
+    
      /**
      * @Assert\File(maxSize="6000000")
      */
