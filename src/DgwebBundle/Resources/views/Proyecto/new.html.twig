@@ -1,9 +1,80 @@
-{% extends 'DgwebBundle:Layout:layout.html.twig' %}
+{% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
 
 
-{% block body -%}
+{% block css %}
+    {{parent()}}
+    <style>
+        
+        .collection>div:last-child {
+                        position:absolute;
+                    }
+
+                    {#div.collection > div:nth-child(2) > div:nth-child(2) > a{
+                        display: none;
+                    }#}
+                    img{
+                        width: 100%;
+                        
+                    }
+                    .archivo{
+                        margin-top:10px;
+                    }
+                    .addItem{
+                        position: absolute;
+                        
+                        float: right;
+                        margin-bottom: 50px;
+                        top: -30px;
+                        left: 10px;
+                    }
+
+                        .addItem div {
+                            position: absolute;
+                        }
+                    .col-md-4{
+                        margin-top: 40px;
+                    }
+                    
+                        .col-md-4 > div>div>  label{
+                            display: none;
+                            
+                        }
+                        
+                        .col-md-4 > .col-md-1 >.link{
+                            margin-top:-32px;
+                            
+                        }
+                    
+                    .col-md-7{
+                        margin-top: -17px;
+                        position:relative;
+                        margin-left:-30px;
+                    }
+                    .link{
+                        position:absolute;
+                        margin-left:-15px;
+                        margin-top:-25px;
+                    }
+                        
+                    .panel{
+                        box-shadow:none;
+                        
+                    }
+                    
+                    .btn{ 
+                        
+                         top: 27px;
+                        left: -33px;
+                    }
+  
+    </style>
     
-    <div class="container" style="background-color: #F6F6F6; padding-top:60px; padding-bottom: 1px;">
+    {% endblock %}
+
+
+{% block contenido -%}
+    
+    <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">
 		
    
         <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">NUEVO PROYECTO</h2>
@@ -25,7 +96,7 @@
 
                         <div class="row">  
                             <div id="listadoa">
-                               <div class="listado col-md-12" style="margin-bottom:30px">          
+                               <div class="listado col-md-12" style="margin-bottom:0px">          
                                    <div class="placas" data-prototype="{% filter escape %}  {% include 'DgwebBundle:Prototype:foto.html.twig' with { 'form': form.placas.vars.prototype} %}   {% endfilter  %}"> 
                                       {{ form_widget(form.placas) }}
                                    </div>
@@ -35,7 +106,7 @@
                         </div>    
          
                                
-    <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 100px;"> 
+    <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 10px;"> 
         <center><a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar al listado</a> {{ form_widget(form.submit) }} </center>
     </div>     
 
@@ -49,8 +120,9 @@
 {% endblock %}
 
 
-{% block javascripts_ste %}
-    <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script> 
+{% block javascripts_step %}
+    {# <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script> #}
+   {{parent()}}
             
 <script>
 
@@ -134,7 +206,7 @@ function addTagForm(collectionHolder, $newLinkLi) {
     collectionHolder.data('index', index + 1);
 
     // Display the form in the page in an li, before the "Add a tag" link li
-    var $newFormLi = $('<div class="col-md-4"></div>').append(newForm);
+    var $newFormLi = $('<div class="col-md-4"><img src="http://placehold.it/1900x600" style="width: 100%;"></div>').append(newForm);
     $newLinkLi.before($newFormLi);
     
 
