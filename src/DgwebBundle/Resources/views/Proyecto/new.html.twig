@@ -2,19 +2,25 @@
 
 
 {% block body -%}
-    <h1>Nuevo Proyecto</h1>
+    
+    <div class="container" style="background-color: #F6F6F6; padding-top:60px; padding-bottom: 1px;">
+		
+   
+        <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">NUEVO PROYECTO</h2>
+        <div style="width: 60px; border-top: 2px solid #09F; margin-left: auto; margin-right: auto; margin-top: 10px;"></div></h2>     
 
             {{ form_start(form) }}
                 {{ form_errors(form) }}
-          <div class="row container-fluid">  
-             <div class="row col-md-6 " style="margin-bottom:50px">
-                <div {{ form_row(form.titulo) }}</div> 
+        
+             <div class="col-md-4 " style="margin-bottom:50px; margin-top:50px;">
+                 {{ form_row(form.titulo) }}
              </div>
-             <div class="row col-md-6 " style="margin-bottom:50px">
-                <div {{ form_row(form.contenido) }}</div> 
+          
+             <div class="col-md-4 " style="margin-bottom:50px; margin-top:50px;">
+                 {{ form_row(form.idCategoriaport) }}
              </div>
-                 <div class="row col-md-6 " style="margin-bottom:50px">
-                <div {{ form_row(form.idCategoriaport) }}</div> 
+             <div class="col-md-4 " style="margin-bottom:50px; margin-top:50px;">
+                 {{ form_row(form.contenido) }}
              </div>
 
                         <div class="row">  
@@ -29,13 +35,17 @@
                         </div>    
          
                                
-    <div class="col-sm-12 col-md-12"> 
-        <a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar al listado</a> {{ form_widget(form.submit) }}
+    <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 100px;"> 
+        <center><a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar al listado</a> {{ form_widget(form.submit) }} </center>
     </div>     
 
+  
      
-     
- {{ form_end(form) }}          
+ {{ form_end(form) }}   
+ 
+
+ 
+        
 {% endblock %}
 
 

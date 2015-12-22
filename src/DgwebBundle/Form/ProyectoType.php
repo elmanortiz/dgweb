@@ -15,9 +15,12 @@ class ProyectoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titulo')
-            ->add('contenido')
-            ->add('idCategoriaport')
+            ->add('titulo','text', array('label'=>'Titulo','required'=>false,
+                    'attr'=>array('class'=>'tituloProyecto')))
+            ->add('contenido','textarea', array('label'=>'Contenido','required'=>false,
+                    'attr'=>array('class'=>'contenidoProyecto')))
+            ->add('idCategoriaport',null, array('label'=>'Categoria','required'=>false,'empty_value'=>'Seleccione Categoria...',
+                    'attr'=>array('class'=>'categoriaProyecto')))
                 
            ->add('placas','collection',array(
                 'type' => new ImagenProyectoType(),

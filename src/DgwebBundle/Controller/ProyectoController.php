@@ -73,7 +73,7 @@ class ProyectoController extends Controller
                 }  
            } 
 
-            return $this->redirect($this->generateUrl('admin_proyecto_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_proyecto', array('id' => $entity->getId())));
         }
 
         return array(
@@ -96,7 +96,9 @@ class ProyectoController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit','submit', array('label' => 'Guardar',
+                                               'attr'=>
+                                                        array('class'=>'btn btn-success btn-sm')));
 
         return $form;
     }
@@ -186,7 +188,9 @@ class ProyectoController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit','submit', array('label' => 'Modificar',
+                                               'attr'=>
+                                                        array('class'=>'btn btn-success btn-sm')));
 
         return $form;
     }
