@@ -17,6 +17,10 @@
                 <link rel="stylesheet" href="{{ asset('Resources/css/bootstrap.css') }}" />
                 <link rel="stylesheet" href="{{ asset('Resources/css/style.css') }}" />
                 <link rel="stylesheet" href="{{ asset('Resources/css/panel.css') }}" />
+                
+        <link rel="stylesheet" href="{{ asset('Resources/css/dependencies.css') }}">
+        <link rel="stylesheet" href="{{ asset('Resources/css/wrapkit.css') }}">
+        <link rel="stylesheet" href="{{ asset('Resources/css/pages.css') }}">
             {%- endblock %}
             {% block cs -%}    
                 {%- endblock %}
@@ -26,11 +30,11 @@
 
     <body>
         {% block body -%}  
-            {#<div class="container">
+            <div class="container">
                 <div class="row">
                     <!-- Imagen Panel -->
                     {% block imagen %}
-                        {% include 'SonodigestBundle:Layout:imagenpanel.html.twig'%}
+                        {% include 'DgwebBundle:Panel:imagenpanel.html.twig'%}
                     {% endblock %}
 
                     <div class="col-md-3"></div>
@@ -42,18 +46,18 @@
 
                     <!-- Botones Panel -->
                     {% block botones %}
-                        {% include 'SonodigestBundle:Layout:botonespanel.html.twig'%}
+                        {% include 'DgwebBundle:Panel:botonespanel.html.twig'%}
                     {% endblock %}
 
                     <div class="clearfix"></div>
                     <div class="col-md-12 hr"></div>
                     <div class="clearfix"></div>
                 </div>
-            </div>#}
+            </div>
                     
         {% endblock %}
         
-        {% block bod %}
+        {% block contenido %}
         {% endblock %}
 
 

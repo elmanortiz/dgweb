@@ -11,19 +11,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 /**
  * Categoria controller.
  *
- * @Route("/admin/about")
+ * @Route("/admin/contact")
  */
-class AboutController extends Controller{
+class ContactController extends Controller{
     
     /**
      * Hace referencia a la pagina Team
      *
-     * @Route("/", name="admin_about")
+     * @Route("/", name="admin_contact")
      * @Method("GET")
      * @Template()
      */
     public function indexAction()
     {
-         return $this->render('DgwebBundle:About:about.html.twig');     
+         return $this->render('DgwebBundle:Contact:contact.html.twig');     
     }
 }
