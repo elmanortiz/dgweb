@@ -4,19 +4,22 @@
 	<script src="recursos/js/bootstrap.min.js"></script>
 	<!-- Javascript Archivos -->
 	<script src='recursos/js/scrollReveal.js'></script>
-    <script>
+  <script>
 
-      window.sr = new scrollReveal();
+    window.sr = new scrollReveal();
 
-    </script>
-	<!-- Find Javascript Archivos -->
-	<script type="text/javascript">
-      $(document).scroll(function () {
-          var y = $(this).scrollTop();
-          if (y > 200) {
-              $('.bottomMenu').fadeIn();
-          } else {
-              $('.bottomMenu').fadeOut();
-          }
+  </script>
+
+  <script>
+       $(document).ready(function(){
+         $(window).bind('scroll', function() {
+         var navHeight = $( window ).height() - 70;
+           if ($(window).scrollTop() > navHeight) {
+             $('nav').addClass('navbar-fixed-top');
+           }
+           else {
+             $('nav').removeClass('navbar-fixed-top');
+           }
+        });
       });
     </script>
