@@ -3,28 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Controller/ProyectoController.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Proyecto/new.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/portafolio/contenido.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Form/EntradaType.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Form/ImagenProyectoType.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Proyecto/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Form/FotoblogType.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/app/config/config.yml</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Entity/ImagenProyecto.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Controller/EntradaController.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Entity/Fotoblog.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Entity/Categoriaport.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Prototype/foto.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Form/ProyectoType.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Proyecto/edit.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Entity/Entrada.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Entrada/new.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Controller/ImagenProyectoController.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Entrada/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Entrada/edit.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Entity/Proyecto.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/portafolio/portafolio.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Layout/navbar.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Inicio/inicio.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Inicio/services.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Layout/navbar_old.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Inicio/portafolio.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Inicio/clientes.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Inicio/landingpage.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Inicio/mapa.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Layout/layout.html.twig</file>
         </group>
     </open-files>
 </project-private>

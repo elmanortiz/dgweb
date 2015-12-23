@@ -17,13 +17,23 @@
                 {#<link rel="stylesheet" href="{{ asset('Resources/bValidator-0.73/themes/bvalidator.theme.bootstrap.rt.css') }}" />#}
                 <link rel="stylesheet" href="{{ asset('Resources/css/bootstrap.css') }}" />
                 <link rel="stylesheet" href="{{ asset('Resources/css/style.css') }}" />
-                <link rel="stylesheet" href="{{ asset('Resources/css/panel.css') }}" />
+                <!-- Fonts -->
+                <link href="{{ asset('https://fonts.googleapis.com/css?family=Montserrat:400,700')}}" rel='stylesheet' type='text/css'>
+                <!-- Favicon -->
+                <link rel="shortcut icon" href="{{ asset('Resources/img/favicon/flex-logo.png')}}" type="image/x-icon">
+                <link rel="icon" href="{{ asset('Resources/img/favicon/flex-logo.png')}}" type="image/x-icon">
+                <link rel="stylesheet" href="{{ asset('Resources/css/panel.css') }}" />   
+
             {% endblock %}
         {% endblock%}
     </head>
     <body>
+        {% block landingpage -%}
+        {% endblock %}
         {% block navigation -%}
             {% include 'DgwebBundle:Layout:navbar.html.twig'%}
+        {% endblock %}
+        {% block spacer -%}
         {% endblock %}
         {% block body -%}            
         {% endblock %}
@@ -37,7 +47,11 @@
         {% endblock %}
         {% block contservices -%}            
         {% endblock %}
+        {% block hero -%}            
+        {% endblock %}
         {% block contportafolio -%}            
+        {% endblock %}
+        {% block port -%}            
         {% endblock %}
         {% block contproyectodetalle -%}            
         {% endblock %}
@@ -54,6 +68,8 @@
         {% block estaditicas -%}            
         {% endblock %}
         {% block instagram -%}            
+        {% endblock %}
+        {% block mapa -%}            
         {% endblock %}
         {% block footer -%} 
             {% include 'DgwebBundle:Layout:footer.html.twig'%}
@@ -95,42 +111,79 @@
                     }
                 });
             </script>
-            
+
 
             <script src="{{ asset('Resources/js/typed.js')}}" type="text/javascript"></script>
             {#<script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script>#}
             <script>
-            $(function () {
-                $(".element").typed({
-                    strings: ["<strong>creative</strong>", "<strong>developers</strong>", "<strong>designers</strong>", "<strong>digitality garage.</strong>"],
-                    startDelay: 2000,
-                    typeSpeed: 100,
-                    backDelay: 1000,
-                    loop: false,
-                    contentType: 'html', // or text
-                    // defaults to false for infinite loop
-                    loopCount: false,
-                    callback: function () {
-                        foo();
-                    },
-                    resetCallback: function () {
-                        newTyped();
-                    }
+                $(function () {
+                    $(".element").typed({
+                        strings: ["<strong>creative</strong>", "<strong>developers</strong>", "<strong>designers</strong>", "<strong>digitality garage.</strong>"],
+                        startDelay: 2000,
+                        typeSpeed: 100,
+                        backDelay: 1000,
+                        loop: false,
+                        contentType: 'html', // or text
+                        // defaults to false for infinite loop
+                        loopCount: false,
+                        callback: function () {
+                            foo();
+                        },
+                        resetCallback: function () {
+                            newTyped();
+                        }
+                    });
+
+                    $(".reset").click(function () {
+                        $("#typed").typed('reset');
+                    });
+
                 });
 
-                $(".reset").click(function () {
-                    $("#typed").typed('reset');
+                function newTyped() { /* A new typed object */
+                }
+
+                function foo() {
+                    console.log("Callback");
+                }
+
+            </script>
+
+            <script type="text/javascript">
+                function init_map() {
+                    var myOptions = {
+                        zoom: 15,
+                        scrollwheel: false,
+                        center: new google.maps.LatLng(13.718145023199938, -89.23165062404786),
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: new google.maps.LatLng(13.718145023199938, -89.23165062404786)
+                    });
+                    infowindow = new google.maps.InfoWindow({
+                        content: "<b>Digitality Garage Head-quarters</b><br/>Ave. Alberto Masferrer #23 y Final 75 Ave Norte<br/>503 San Salvador"
+                    });
+                    google.maps.event.addListener(marker, "click", function () {
+                        infowindow.open(map, marker);
+                    });
+                    infowindow.open(map, marker);
+                }
+                google.maps.event.addDomListener(window, 'load', init_map);
+            </script> <!-- Fin de Mapa de Google -->
+            <script>
+                $(document).ready(function () {
+                    $(window).bind('scroll', function () {
+                        var navHeight = $(window).height() - 100;
+                        if ($(window).scrollTop() > navHeight) {
+                            $('nav').addClass('navbar-fixed-top');
+                        }
+                        else {
+                            $('nav').removeClass('navbar-fixed-top');
+                        }
+                    });
                 });
-
-            });
-
-            function newTyped() { /* A new typed object */
-            }
-
-            function foo() {
-                console.log("Callback");
-            }
-
             </script>
         {% endblock %}
     </body>

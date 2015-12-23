@@ -1,75 +1,55 @@
-<nav>
-	<!-- Navigation Bar Desktop -->
-	<div class="hidden-xs hidden-sm">
-		<div class="container" style="background-color: #FFF; height: 100px;">
-			<div class="pull-left" style="color: #FFF;">
-				<a href="index.php"><img src="recursos/img/logo2.png" style="width: 160px; margin-top: 20px;"></a>
-			</div>
-			<div class="pull-right" style="margin-top: 40px;">
-				<ul class="mainlinks" style="display: inline;">
-					<a href="index.php" class="links"><li <?php if ($activePage =="index") {?>style="color: #FFD24C; background-color: #262626;" <?php } ?> >
-						Home
-					</li></a>
-					<a href="about.php" class="links"><li <?php if ($activePage =="about") {?>style="color: #FFD24C; background-color: #262626;" <?php } ?> >
-						About Us
-					</li></a>
-					<a href="services.php" class="links"><li <?php if ($activePage =="services") {?>style="color: #FFD24C; background-color: #262626;" <?php } ?>>
-						Services
-					</li></a>
-					<a href="portfolio.php" class="links"><li <?php if ($activePage =="portfolio") {?>style="color: #FFD24C; background-color: #262626;" <?php } ?>>
-						Portfolio
-					</li></a>
-					<a href="blog.php" class="links"><li <?php if ($activePage =="blog") {?>style="color: #FFD24C; background-color: #262626;" <?php } ?>>
-						Blog
-					</li></a>
-					<a href="team.php" class="links"><li <?php if ($activePage =="team") {?>style="color: #FFD24C; background-color: #262626;" <?php } ?>>
-						Team
-					</li></a>
-					<a href="contact.php" class="links"><li <?php if ($activePage =="contact") {?>style="color: #FFD24C; background-color: #262626;" <?php } ?>>
-						Contact
-					</li></a>
-					<a href="careers.php" class="links"><li <?php if ($activePage =="careers") {?>style="color: #FFD24C; background-color: #262626;" <?php } ?>>
-						Careers
-					</li></a>
-				</ul>
+	<nav>
+		<!-- Navigation Bar Desktop -->
+		<div class="hidden-xs hidden-sm">
+			<div class="container-fluid" id="mainnav" style="background-color: #FFF; height: 100px; border-bottom: 1px solid #ddd;">
+				<div class="pull-left" style="color: #FFF;">
+					<a href="index.php"><img src="recursos/img/logo2.png" style="width: 160px; margin-top: 20px; margin-left: 50px;"></a>
+				</div>
+				<div class="pull-right" style="margin-top: 40px;">
+					<ul class="mainlinks" style="display: inline;">
+						<a href="index.php" class="links"><li <?php if ($activePage =="index") {?>style="color: #262626; background-color: #ddd;" <?php } ?> >
+							Home
+						</li></a>
+						<a href="about.php" class="links"><li <?php if ($activePage =="about") {?>style="color: #262626; background-color: #ddd;" <?php } ?> >
+							About Us
+						</li></a>
+						<a href="services.php" class="links"><li <?php if ($activePage =="services") {?>style="color: #262626; background-color: #ddd;" <?php } ?>>
+							Services
+						</li></a>
+						<a href="portfolio.php" class="links"><li <?php if ($activePage =="portfolio") {?>style="color: #262626; background-color: #ddd;" <?php } ?>>
+							Portfolio
+						</li></a>
+						<a href="blog.php" class="links"><li <?php if ($activePage =="blog") {?>style="color: #262626; background-color: #ddd;" <?php } ?>>
+							Blog
+						</li></a>
+						<a href="team.php" class="links"><li <?php if ($activePage =="team") {?>style="color: #262626; background-color: #ddd;" <?php } ?>>
+							Team
+						</li></a>
+						<a href="contact.php" class="links"><li <?php if ($activePage =="contact") {?>style="color: #262626; background-color: #ddd;" <?php } ?>>
+							Contact
+						</li></a>
+						<a href="careers.php" class="links"><li <?php if ($activePage =="careers") {?>style="color: #262626; background-color: #ddd;" <?php } ?>>
+							Careers
+						</li></a>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- After 200px Scrolling Menu -->
-	<div class="bottomMenu hidden-xs hidden-sm">
-        <div>
-	        <center>
-		        <ul class="mainlinks1" style="display: inline;">
-					<a href="index.php" class="links1"><li <?php if ($activePage =="index") {?>style="color: #FFD24C;" <?php } ?> >
-						Home
-					</li></a>
-					<a href="about.php" class="links1"><li <?php if ($activePage =="about") {?>style="color: #FFD24C;" <?php } ?> >
-						About Us
-					</li></a>
-					<a href="services.php" class="links1"><li <?php if ($activePage =="services") {?>style="color: #FFD24C;" <?php } ?>>
-						Services
-					</li></a>
-					<a href="portfolio.php" class="links1"><li <?php if ($activePage =="portfolio") {?>style="color: #FFD24C;" <?php } ?>>
-						Portfolio
-					</li></a>
-					<a href="blog.php" class="links1"><li <?php if ($activePage =="blog") {?>style="color: #FFD24C;" <?php } ?>>
-						Blog
-					</li></a>
-					<a href="team.php" class="links1"><li <?php if ($activePage =="team") {?>style="color: #FFD24C;" <?php } ?>>
-						Team
-					</li></a>
-					<a href="contact.php" class="links1"><li <?php if ($activePage =="contact") {?>style="color: #FFD24C;" <?php } ?>>
-						Contact
-					</li></a>
-					<a href="careers.php" class="links1"><li <?php if ($activePage =="careers") {?>style="color: #FFD24C;" <?php } ?>>
-						Careers
-					</li></a>
-				</ul>
-	        </center>
-        </div>
-    </div>
-	<!-- End Navigation Bar Desktop -->
-</nav>
+	</nav>
+
+    <script>
+    $(document).ready(function(){
+       $(window).bind('scroll', function() {
+       var navHeight = $( window ).height() - 100;
+         if ($(window).scrollTop() > navHeight) {
+           $('nav').addClass('navbar-fixed-top');
+         }
+         else {
+           $('nav').removeClass('navbar-fixed-top');
+         }
+      });
+    });
+    </script>
 
 	<!-- Navigation Bar Mobile -->
 	<nav class="navbar navbar-default hidden-md hidden-lg">

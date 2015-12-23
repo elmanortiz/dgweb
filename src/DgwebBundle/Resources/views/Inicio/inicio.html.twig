@@ -1,20 +1,47 @@
 {% extends 'DgwebBundle:Layout:layout.html.twig' %}
-{% block contenedorservicios -%}            
-    {% include 'DgwebBundle:Inicio:servicios.html.twig'%}
+{% block landingpage -%}
+    {% include 'DgwebBundle:Inicio:landingpage.html.twig'%}
 {% endblock %}
+
+{% block spacer -%}
+    {% include 'DgwebBundle:Inicio:spacer.html.twig'%}
+{% endblock %}
+
 {% block sliderpc -%}            
     {% include 'DgwebBundle:Inicio:sliderpc.html.twig'%}
 {% endblock %}
+
 {% block slidermov -%}            
     {% include 'DgwebBundle:Inicio:slidermov.html.twig'%}
 {% endblock %}
-{% block instagram -%}
-    {% include 'DgwebBundle:Layout:instagram.html.twig'%}
+
+{% block contservices -%}            
+    {% include 'DgwebBundle:Inicio:services.html.twig'%}
 {% endblock %}
+
+{% block hero -%}            
+    {% include 'DgwebBundle:Inicio:hero.html.twig'%}
+{% endblock %}
+
+{% block port -%}            
+    {% include 'DgwebBundle:Inicio:portafolio.html.twig'%}
+{% endblock %}
+
 {% block clientes -%}
     {% include 'DgwebBundle:Inicio:clientes.html.twig'%}
 {% endblock %}
-{% block estaditicas -%}            
-    {% include 'DgwebBundle:Inicio:estadisticas.html.twig'%}
+
+{% block mapa -%}
+    {% include 'DgwebBundle:Inicio:mapa.html.twig'%}
 {% endblock %}
+
+{% block instagram -%}
+    {#{% include 'DgwebBundle:Layout:instagram.html.twig'%}#}
+{% endblock %}
+
+
+
+{#{% block estaditicas -%}            
+    {% include 'DgwebBundle:Inicio:estadisticas.html.twig'%}
+{% endblock %}#}
 
