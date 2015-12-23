@@ -25,7 +25,7 @@
                         float: right;
                         margin-bottom: 50px;
                         top: -30px;
-                        left: 10px;
+                        left: 14px;
                     }
 
                         .addItem div {
@@ -63,9 +63,14 @@
                     
                     .btn{ 
                         
-                         top: 27px;
-                        left: -33px;
+                         top: 15px;
+                        left: -17px;
                     }
+                   
+                     .placas > div:nth-child(2) > div:nth-child(3) {
+                        display: none;
+                    }
+                    
   
     </style>
     
@@ -121,6 +126,7 @@
 
 
 {% block javascripts_step %}
+     <script src="{{ asset('Resources/js/Proyecto.js') }}"></script>  
     {# <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script> #}
    {{parent()}}
             
@@ -143,7 +149,7 @@ jQuery(document).ready(function() {
     
     //alert('Estoy aqui');
 
-    //$("#dgplusbellebundle_consulta_pacienteSelectBoxItOptions li").remove();
+  $("#dgplusbellebundle_consulta_pacienteSelectBoxItOptions li").remove();
 
   /*  $('#dgplusbellebundle_consulta_fechaConsulta').daterangepicker({
                     singleDatePicker: true,
@@ -186,7 +192,7 @@ jQuery(document).ready(function() {
         // $('.btn_radio').attr('name', 'rol_predet');
     });
 
-
+validarProyecto();
     
 });
 
@@ -206,14 +212,14 @@ function addTagForm(collectionHolder, $newLinkLi) {
     collectionHolder.data('index', index + 1);
 
     // Display the form in the page in an li, before the "Add a tag" link li
-    var $newFormLi = $('<div class="col-md-4"><img src="http://placehold.it/1900x600" style="width: 100%;"></div>').append(newForm);
+    var $newFormLi = $('<div class="col-md-4"><img src="http://placehold.it/1900x700" style="width: 100%;"></div>').append(newForm);
     $newLinkLi.before($newFormLi);
     
 
 
     // add a delete link to the new form
     addTagFormDeleteLink($newFormLi);
-    //validarPaquete(); 
+     validarProyecto();
     $('.btn_radio').click(function(event) {
         /* Act on the event */
         var id = $(this).attr('id');
