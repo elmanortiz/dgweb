@@ -1,76 +1,15 @@
 {% extends 'DgwebBundle:Layout:layout.html.twig' %}
 
-{#
-
-{% block contenido -%}
-  
-	<div class="container" style="background-color: #F6F6F6; padding-top:60px; padding-bottom: 1px;">
-		
-   
-        <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">MODIFICAR PROYECTO</h2>
-        <div style="width: 60px; border-top: 2px solid #09F; margin-left: auto; margin-right: auto; margin-top: 10px;"></div></h2>     
-	<!-- Footer Desktop -->
-
-         
-         
-            <div class="col-md-4 " style="margin-bottom:10px">
-                 {{ entity.titulo) }}
-            </div>  
-            <div class="col-md-4 " style="margin-bottom:10px">
-               {{ entity.idCategoriaport }}
-            </div>
-             <div class="col-md-12 " style="margin-bottom:100px">
-               {{ entity.contenido }}
-              </div>
-             
-             
-             
-              <div  style="margin-bottom:15px" class="placas" data-prototype="{% filter escape %}  {% include 'DgwebBundle:Prototype:foto.html.twig' with { 'form': entity.placas.vars.prototype} %}   {% endfilter  %}"> 
-
-                      {% for key, placa in entity.placas %}
-                                        
-                       <div class="col-md-12">
-                         <div class="panel bg-grd-light" data-fill-color="true">
-                            <div class="panel-body">
-                                 <img class="embed-responsive-item" itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{placas[key].imagen}}" alt="dummy image"> 
-                                  {{ form_row(placa) }}   
- 
-                            </div>
-                         </div>
-                       </div>        
-                       {% endfor %}
-              </div>
-
-            </div>
-
-                               
-    <div class="col-sm-12 col-md-12" style="margin-top: 100px; margin-bottom: 100px;"> 
-        <center><a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar al listado</a> {{ form_widget(edit_form.submit) }} </center>
-    </div>     
-
- 
- 
- 
-{% endblock %}
-
-
-#}
-
-
-
-
-
-{#{% extends '::base.html.twig' %} #}
-
 {% block contportafolio -%}
-    
-    
-    <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">
+
+   <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">  
 		
    
         <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">{{ entity.titulo }}</h2>
         <div style="width: 60px; border-top: 2px solid #09F; margin-left: auto; margin-right: auto; margin-top: 10px;"></div></h2>     
 	<!-- Footer Desktop -->
+        
+   </div> 
 
     <table class="record_properties">
         <tbody>
@@ -89,31 +28,45 @@
              {#   <td>{{ entity.contenido }}</td> #}
             </tr>
              <tr>
+                 
            {% for key, placa in entity.placas %}
-            <img class="embed-responsive-item" style="width: 100%; margin-top: 30px;" itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{entity.placas[key].imagen}}" alt="dummy image">
+               
+                {%  if key==0   %}  
+
+                  <div class="container-fluid">
+                      <div class="row">
+                          <img class="embed-responsive-item" style="width: 100%; margin-top: 30px;" itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{entity.placas[key].imagen}}" alt="dummy image">
+                       <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">  
+                          <div class="row">
+                            <div style="margin-top: 20px;"></div>
+                            <p class="text-justify">
+                               {{ entity.contenido }}
+                            </p> 
+                          </div>
+                       </div> 
+                      </div>
+                  </div>  
+                
+                {% else %}
+                    <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">  
+                         <div class="col-md-12 hr"></div>
+                        <img class="embed-responsive-item" style="width: 100%; margin-top: 30px;" itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{entity.placas[key].imagen}}" alt="dummy image">
+                    </div> 
+                {% endif %}
+                
+           {% endfor %} 
+           
+        <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">      
+          <div class="col-md-12 hr"></div>   
+        </div>     
             
-            {% endfor %} 
              </tr>
         </tbody>
     </table>
              
     <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 100px;"> 
-        <center><a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar al listado</a></center>
+        <center><a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar a proyectos</a></center>
     </div>           
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('admin_proyecto') }}">
-            Back to the list
-        </a>
-    </li>
- {#   <li>
-        <a href="{{ path('admin_proyecto_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
-   #} 
- </div>    
+      
+ </div> 
 {% endblock %}
