@@ -1,15 +1,38 @@
-{% extends 'DgwebBundle:Layout:layout.html.twig' %}
+{% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
 
-{% block contportafolio -%}
+{% block contenido -%}
   
 
     <div class="container-fluid" style="background-color: #F6F6F6;">
-         <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">PROYECTOS</h2>
-        <div style="width: 60px; border-top: 2px solid #09F; margin-left: auto; margin-right: auto; margin-top: 10px;"></div></h2>     
+       {# <div data-sr='wait 0.1s, ease-in 50px'><h2 class="text-center" style="color: #B3B3B3;">WE MAKE <strong style="color: #262626;">COOL</strong> STUFF</h2></div>
+        <div data-sr='wait 0.3s, ease-in 50px'><h4 class="text-center" style="color: #262626;">And we <strong style="color: #262626;">BRAG</strong> about it</h4></div>
+        
+        <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">PROYECTOS</h2>
+        <div style="width: 60px; border-top: 2px solid #09F; margin-left: auto; margin-right: auto; margin-top: 10px;"></div></h2>     #}
         
 	<!-- Footer Desktop -->
-	<div class="container" style="background-color: #F6F6F6; padding-top:30px; padding-bottom: 30px;">
-
+	<div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 10px;">
+            
+            
+{% block fotos_filtro %}
+    
+    <div class="container text-center" style="margin-bottom: 0px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="botonpanel active " id="0">Todas</div>
+            </div>
+            {% for idCategoriaport in categoriasProyectos %}
+                <div class="col-md-3">
+                    <div class="botonpanel inactive" id="{{idCategoriaport.id}}" >
+                        {{idCategoriaport.nombre}}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+            
+{% endblock %}    
+<div class="col-md-12 hr"></div>  
                <div class="row">
                     <!-- COMIEZO DE ITEMS DE PORTAFOLIO -->
                     <!-- ITEM 1 -->
@@ -18,7 +41,7 @@
                     {% for entity in entities %}
                         
                    
-                        <div class="col-md-4">
+                        <div class="gallery-col col-md-4 {{entity.idCategoriaport}}">
                             <div class="portfolio">
                            {#   <td><a href="{{ path('admin_proyecto_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>  #}
                               <a href="
@@ -76,4 +99,39 @@
 	<!-- End Footer Desktop -->
 </div>               
                 
+    {% endblock %}
+    
+    
+     {% block javascripts_step %}  
+       
+       {{parent()}}
+    
+     <script>  
+                        $(document).ready(function () {
+                            var id = 0;
+
+                            $('.botonpanel').on('click',function(){
+                                 var idNuevo = $(this).attr('id');                           
+                               
+                                $( ".gallery-col" ).each(function( index, element ) {
+                                                                      
+                                    if(idNuevo==0){
+                                       $(this).show();  
+                                        
+                                    }else{
+                                        
+                                       if(!$(this).hasClass(idNuevo)){
+                                        $(this).hide();
+                                        
+                                         }  else{
+                                            $(this).show();  
+                                         }                                       
+                                    }
+                                    
+                                });
+
+                            });
+                            
+                        });
+        </script>
     {% endblock %}

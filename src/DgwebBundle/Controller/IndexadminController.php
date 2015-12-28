@@ -27,10 +27,14 @@ class IndexadminController extends Controller{
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('DgwebBundle:Proyecto')->findAll();
+        
+        $proyectos = $em->getRepository('DgwebBundle:Categoriaport')->findAll();
 
 //        return array(
 //            'entities' => $entities,
 //        );
-         return $this->render('DgwebBundle:Proyecto:indexadmin.html.twig',array('entities' => $entities));     
+         return $this->render('DgwebBundle:Proyecto:indexadmin.html.twig',array('entities' => $entities, 
+                                                                                'categoriasProyectos'=>$proyectos,)
+         );     
     }
 }

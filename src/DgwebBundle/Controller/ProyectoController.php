@@ -32,9 +32,14 @@ class ProyectoController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('DgwebBundle:Proyecto')->findAll();
+        
+        $proyectos = $em->getRepository('DgwebBundle:Categoriaport')->findAll();
 
         return array(
-            'entities' => $entities,
+           'entities' => $entities,
+            'categoriasProyectos'=>$proyectos,
+           // 'fotos'=>$fotos,
+            
         );
     }
     /**
