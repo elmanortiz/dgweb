@@ -101,16 +101,20 @@
               <div  style="margin-bottom:15px" class="placas" data-prototype="{% filter escape %}  {% include 'DgwebBundle:Prototype:foto.html.twig' with { 'form': edit_form.placas.vars.prototype} %}   {% endfilter  %}"> 
 
                       {% for key, placa in edit_form.placas %}
-                                        
-                       <div class="col-md-4">
-                         
+                       <div class="col-md-4">    
+                        <div class="clearfix"></div>
+                        <div id="listadoa">
+                                            
+                           <div class="col-md-12">
+                             <div class="panel-body">
                             
-                                 <img class="embed-responsive-item" style="width: 100%; margin-top: 0px;"itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{placas[key].imagen}}" alt="dummy image"> 
+                                 <img class="embed-responsive-item" style="width: 100%; margin-top: 10px;"itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{placas[key].imagen}}" alt="dummy image"> 
                                   {{ form_row(placa) }}   
- 
-                           
-                         </div>
-                       </div>        
+
+                             </div> 
+                           </div> 
+                        </div> 
+                        </div>            
                        {% endfor %}
               </div>
 
@@ -130,6 +134,7 @@
 
 
 {% block javascripts_step %}
+    <script src="{{ asset('Resources/js/Proyecto.js') }}"></script>  
    {# <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script> #}
    {{parent()}}
             
@@ -197,7 +202,7 @@ jQuery(document).ready(function() {
         // $('.btn_radio').attr('name', 'rol_predet');
     });
 
-
+//validarProyecto();
     
 });
 
@@ -217,14 +222,14 @@ function addTagForm(collectionHolder, $newLinkLi) {
     collectionHolder.data('index', index + 1);
 
     // Display the form in the page in an li, before the "Add a tag" link li
-    var $newFormLi = $('<div class="col-md-4"><img src="http://placehold.it/1900x600" style="width: 100%;"></div>').append(newForm);
+    var $newFormLi = $('<div class="col-md-4"><div class="clearfix"></div><div id="listadoa"><div class="col-md-12"><div class="panel-body"><img style="margin-top:23px" class="archivo" src="http://placehold.it/1980x700"></div></div></div></div>').append(newForm);
     $newLinkLi.before($newFormLi);
     
 
 
     // add a delete link to the new form
     addTagFormDeleteLink($newFormLi);
-    //validarPaquete(); 
+     //validarProyecto();
     $('.btn_radio').click(function(event) {
         /* Act on the event */
         var id = $(this).attr('id');

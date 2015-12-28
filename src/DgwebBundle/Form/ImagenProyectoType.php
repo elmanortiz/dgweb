@@ -20,7 +20,7 @@ class ImagenProyectoType extends AbstractType
             //->add('proyecto')
                 
              ->add('file',null, array('label'=>'Imagen','required'=>false,
-                    'attr'=>array('class'=>'imagen'
+                    'attr'=>array('class'=>'imagenProyecto'
                         
                     )))     
         ;
