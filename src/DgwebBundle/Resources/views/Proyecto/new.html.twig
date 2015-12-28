@@ -82,7 +82,7 @@
     <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">
 		
    
-        <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">NUEVOxxx PROYECTO</h2>
+        <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">NUEVO PROYECTO</h2>
         <div style="width: 60px; border-top: 2px solid #09F; margin-left: auto; margin-right: auto; margin-top: 10px;"></div></h2>     
 
             {{ form_start(form) }}
@@ -118,7 +118,7 @@
          
                                
     <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 10px;"> 
-        <center><a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar al listado</a> {{ form_widget(form.submit) }} </center>
+        <center><a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar al portafolio</a> {{ form_widget(form.submit) }} </center>
     </div>     
 
   
@@ -132,11 +132,23 @@
 
 
 {% block javascripts_step %}
-     <script src="{{ asset('Resources/js/Proyecto.js') }}"></script>  
+    {{parent()}}
+    
     {# <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script> #}
-   {{parent()}}
-      <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script>      
+   
+      <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script>  
+      <script src="{{ asset('Resources/js/Proyecto.js') }}"></script>   
+    <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/jquery.bvalidator.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/bvalidator.lang.es.js')}}" ></script>
+
+      
+      <script>
+        {{ tinymce_init() }}
+      </script>
+      
 <script>
+    
+    
 
 // Get the ul that holds the collection of tags
 var collectionHolder = $('div.placas');
@@ -259,7 +271,5 @@ function addTagFormDeleteLink($tagFormLi) {
 
 
  </script>
- <script>
- {{ tinymce_init() }}
- </script>        
+       
 {% endblock %}

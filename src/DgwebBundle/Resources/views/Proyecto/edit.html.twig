@@ -23,8 +23,8 @@
                         
                         float: right;
                         margin-bottom: 50px;
-                        top: 600px;
-                        left: 383px;
+                        top: 780px;
+                        left: 367px;
                     }
 
                         .addItem div {
@@ -63,8 +63,16 @@
                     .btn{ 
                         
                          top: 27px;
-                        left: -33px;
+                        left: -65px;
                     }
+                    
+                     .imagenProyecto{ 
+                        
+                         top: 27px;
+                        left: -65px;
+                    }
+                    
+            
   
     </style>
     
@@ -88,17 +96,20 @@
 
             <div class="col-md-4 " style="margin-bottom:10px">
                  {{ form_row(edit_form.titulo) }}
+                 {{ form_widget(edit_form.titulo) }}
             </div>  
             <div class="col-md-4 " style="margin-bottom:10px">
                {{ form_row(edit_form.idCategoriaport) }}
+               {{ form_widget(edit_form.idCategoriaport) }}
             </div>
-             <div class="col-md-12 " style="margin-bottom:100px">
+             <div class="col-md-12 " style="margin-bottom:50px">
                {{ form_row(edit_form.contenido) }}
+               {{ form_widget(edit_form.contenido) }}
               </div>
              
              
              
-              <div  style="margin-bottom:15px" class="placas" data-prototype="{% filter escape %}  {% include 'DgwebBundle:Prototype:foto.html.twig' with { 'form': edit_form.placas.vars.prototype} %}   {% endfilter  %}"> 
+              <div class="placas" data-prototype="{% filter escape %}  {% include 'DgwebBundle:Prototype:foto.html.twig' with { 'form': edit_form.placas.vars.prototype} %}   {% endfilter  %}"> 
 
                       {% for key, placa in edit_form.placas %}
                        <div class="col-md-4">    
@@ -108,7 +119,7 @@
                            <div class="col-md-12">
                              <div class="panel-body">
                             
-                                 <img class="embed-responsive-item" style="width: 100%; margin-top: 10px;"itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{placas[key].imagen}}" alt="dummy image"> 
+                                 <img class="embed-responsive-item" style="width: 100%; margin-top: 10px; margin-left: -30px;"itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{placas[key].imagen}}" alt="dummy image"> 
                                   {{ form_row(placa) }}   
 
                              </div> 
@@ -122,7 +133,8 @@
 
                                
     <div class="col-sm-12 col-md-12" style="margin-top: 100px; margin-bottom: 100px;"> 
-        <center><a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar al listado</a> {{ form_widget(edit_form.submit) }} </center>
+{#        <center><a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar al listado</a> {{ form_widget(edit_form.submit) }} </center>#}
+        <center> {{ form_widget(edit_form.submit) }} </center>
     </div>     
 
      
@@ -137,6 +149,10 @@
     <script src="{{ asset('Resources/js/Proyecto.js') }}"></script>  
    {# <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script> #}
    {{parent()}}
+   
+    <script>
+      {{ tinymce_init() }}
+    </script>
             
 <script>
 
@@ -222,7 +238,7 @@ function addTagForm(collectionHolder, $newLinkLi) {
     collectionHolder.data('index', index + 1);
 
     // Display the form in the page in an li, before the "Add a tag" link li
-    var $newFormLi = $('<div class="col-md-4"><div class="clearfix"></div><div id="listadoa"><div class="col-md-12"><div class="panel-body"><img style="margin-top:23px" class="archivo" src="http://placehold.it/1980x700"></div></div></div></div>').append(newForm);
+    var $newFormLi = $('<div class="col-md-4"><div id="listadoa"><div class="col-md-12"><img style="margin-top:10px margin-left:-30px" class="archivo" src="http://placehold.it/1900x700"></div></div></div>').append(newForm);
     $newLinkLi.before($newFormLi);
     
 
