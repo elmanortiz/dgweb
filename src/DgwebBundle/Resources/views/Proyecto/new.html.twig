@@ -82,21 +82,27 @@
     <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">
 		
    
-        <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">NUEVO PROYECTO</h2>
+        <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">NUEVOxxx PROYECTO</h2>
         <div style="width: 60px; border-top: 2px solid #09F; margin-left: auto; margin-right: auto; margin-top: 10px;"></div></h2>     
 
             {{ form_start(form) }}
                 {{ form_errors(form) }}
         
-             <div class="col-md-4 " style="margin-bottom:50px; margin-top:50px;">
-                 {{ form_row(form.titulo) }}
+             <div class="col-md-4 " style="margin-bottom:10px; margin-top:50px;">
+                 {#{{ form_row(form.titulo) }}#}
+                 {{ form_label(form.titulo) }}
+                 {{ form_widget(form.titulo) }}
              </div>
           
-             <div class="col-md-4 " style="margin-bottom:50px; margin-top:50px;">
+             <div class="col-md-4 " style="margin-bottom:10px; margin-top:50px;">
                  {{ form_row(form.idCategoriaport) }}
              </div>
-             <div class="col-md-4 " style="margin-bottom:50px; margin-top:50px;">
-                 {{ form_row(form.contenido) }}
+             <div class="col-md-4"></div>
+             <div class="clearfix"></div>
+             <div class="col-md-12 " style="margin-bottom:50px; margin-top:0px;">
+                 {#{{ form_row(form.contenido) }}#}
+                 {{ form_label(form.contenido) }}
+                 {{ form_widget(form.contenido) }}
              </div>
 
                         <div class="row">  
@@ -129,7 +135,7 @@
      <script src="{{ asset('Resources/js/Proyecto.js') }}"></script>  
     {# <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script> #}
    {{parent()}}
-            
+      <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script>      
 <script>
 
 // Get the ul that holds the collection of tags
@@ -253,5 +259,7 @@ function addTagFormDeleteLink($tagFormLi) {
 
 
  </script>
-         
+ <script>
+ {{ tinymce_init() }}
+ </script>        
 {% endblock %}

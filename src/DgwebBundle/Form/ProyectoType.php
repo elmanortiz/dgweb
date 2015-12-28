@@ -16,9 +16,11 @@ class ProyectoType extends AbstractType
     {
         $builder
             ->add('titulo','text', array('label'=>'Titulo','required'=>false,
-                    'attr'=>array('class'=>'tituloProyecto')))
+                    'attr'=>array('class'=>'form-control')))
             ->add('contenido','textarea', array('label'=>'Contenido','required'=>false,
-                    'attr'=>array('class'=>'contenidoProyecto')))
+                    'attr'=>array('class' => 'tinymce',
+                        'data-theme' => 'bbcode'))
+                    )
             ->add('idCategoriaport',null, array('label'=>'Categoria','required'=>false,'empty_value'=>'Seleccione Categoria...',
                     'attr'=>array('class'=>'categoriaProyecto')))
                 
@@ -28,8 +30,7 @@ class ProyectoType extends AbstractType
                 'by_reference' => false,
                 'allow_add' => true,
                 'allow_delete' => true,
-                ))              
-           
+                ))                     
         ;
     }
     
