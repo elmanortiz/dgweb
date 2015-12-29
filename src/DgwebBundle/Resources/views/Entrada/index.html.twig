@@ -1,7 +1,10 @@
-{% extends 'DgwebBundle:Layout:layout.html.twig' %}
-
-{% block body -%}
-    <h1>Entrada list</h1>
+{% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
+{% block titulo %}Editar blog{% endblock %}
+{% block contenido -%}
+    
+     <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">
+    
+    <h1>Entrada de blog</h1>
 
     <table class="records_list">
         <thead>
@@ -40,7 +43,7 @@
         <ul>
         <li>
             <a href="{{ path('admin_entrada_new') }}">
-                Create a new entry
+                Crear blog
             </a>
         </li>
     </ul>

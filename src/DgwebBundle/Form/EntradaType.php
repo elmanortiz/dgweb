@@ -17,10 +17,11 @@ class EntradaType extends AbstractType
     {
         $builder
             ->add('titulo', 'text', array(
-                'required' => true
+                'required' => true,
+                'attr'=>array('class'=>'')
             ))
-            ->add('escritapor', 'text', array(
-                'required' => true
+            ->add('escritapor', 'text', array( 'label' => 'Escrita por',
+                'required' => true,
             ))
             //->add('fecha')
             ->add('contenido', 'textarea',array(

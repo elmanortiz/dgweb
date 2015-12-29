@@ -21,7 +21,7 @@ class ProyectoType extends AbstractType
                     'attr'=>array('class' => 'tinymce',
                         'data-theme' => 'bbcode'))
                     )
-            ->add('idCategoriaport',null, array('label'=>'Categoria','required'=>false,'empty_value'=>'Seleccione Categoria...',
+            ->add('idCategoriaport',null, array('label'=>'Elija una categoria','required'=>false,'empty_value'=>'Seleccione Categoria...',
                     'attr'=>array('class'=>'categoriaProyecto')))
                 
            ->add('placas','collection',array(

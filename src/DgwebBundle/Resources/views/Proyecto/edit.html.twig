@@ -1,5 +1,5 @@
 {% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
-
+{% block titulo %}Editar proyecto{% endblock %}
 {% block css %}
     {{parent()}}
     <style>
@@ -23,7 +23,7 @@
                         
                         float: right;
                         margin-bottom: 50px;
-                        top: 780px;
+                        top: 810px;
                         left: 367px;
                     }
 
@@ -86,7 +86,7 @@
 	<div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">
 		
    
-        <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">MODIFICAR PROYECTO</h2>
+        <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">EDITAR PROYECTO</h2>
         <div style="width: 60px; border-top: 2px solid #09F; margin-left: auto; margin-right: auto; margin-top: 10px;"></div></h2>     
 	<!-- Footer Desktop -->
 
@@ -98,7 +98,7 @@
                  {{ form_row(edit_form.titulo) }}
                  {{ form_widget(edit_form.titulo) }}
             </div>  
-            <div class="col-md-4 " style="margin-bottom:10px">
+            <div class="col-md-12 " style="margin-bottom:10px">
                {{ form_row(edit_form.idCategoriaport) }}
                {{ form_widget(edit_form.idCategoriaport) }}
             </div>

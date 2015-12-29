@@ -1,6 +1,6 @@
 {% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
 
-
+{% block titulo %}Crear proyecto{% endblock %}
 {% block css %}
     {{parent()}}
     <style>
@@ -94,15 +94,16 @@
                  {{ form_widget(form.titulo) }}
              </div>
           
-             <div class="col-md-4 " style="margin-bottom:10px; margin-top:50px;">
-                 {{ form_row(form.idCategoriaport) }}
-             </div>
+             
              <div class="col-md-4"></div>
              <div class="clearfix"></div>
-             <div class="col-md-12 " style="margin-bottom:50px; margin-top:0px;">
+             <div class="col-md-12 " style="margin-bottom:-10px; margin-top:0px;">
                  {#{{ form_row(form.contenido) }}#}
                  {{ form_label(form.contenido) }}
                  {{ form_widget(form.contenido) }}
+             </div>
+             <div class="col-md-4 " style="margin-bottom:50px; margin-top:50px;">
+                 {{ form_row(form.idCategoriaport) }}
              </div>
 
                         <div class="row">  

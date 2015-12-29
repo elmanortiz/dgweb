@@ -1,7 +1,7 @@
 {% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
 
 
-{% block titulo %}Crear Entrada{% endblock %}
+{% block titulo %}Crear entrada{% endblock %}
 
 {% block contenido -%}
 
@@ -52,8 +52,13 @@
                 </a>
             </li>
         </ul> -->
+                
+             
+                 <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 10px;"> 
+                   <center> {{ form_widget(form.submit) }} </center>
+                 </div>   
 
-                <div class="col-md-3">
+               {# <div class="col-md-3">
                     
                 </div>
                 <div class="col-md-3">
@@ -66,7 +71,7 @@
                 </div>
                 <div class="col-md-3">
 
-                </div>
+                </div>#}
                 <div class="clearfix"></div>
 
                 {{ form_end(form) }}

@@ -1,8 +1,8 @@
-{% extends 'DgwebBundle:Layout:layout.html.twig' %}
+{% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
 
-{% block titulo %}Modificar proyecto{% endblock %}
+{% block titulo %}Editar entrada{% endblock %}
 
-{% block bod -%}
+{% block contenido -%}
 
     <div class="container">
         <div class="row">
@@ -84,7 +84,7 @@
         $(document).ready(function () {
            // validarUsuario();
         });
-        {# {{ tinymce_init() }}  #}
+        {{ tinymce_init() }} 
     </script>
 
 {% endblock %}
