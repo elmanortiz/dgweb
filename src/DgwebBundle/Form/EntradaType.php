@@ -17,15 +17,16 @@ class EntradaType extends AbstractType
     {
         $builder
             ->add('titulo', 'text', array(
-                'required' => true,
-                'attr'=>array('class'=>'')
+                'required' => false,
+                'attr'=>array('class'=>'tituloEntrada')
             ))
             ->add('escritapor', 'text', array( 'label' => 'Escrita por',
-                'required' => true,
+                'required' => false,
+                'attr'=>array('class'=>'escritaporEntrada')
             ))
             //->add('fecha')
             ->add('contenido', 'textarea',array(
-                  'required' => true,
+                  'required' => false,
                   'attr' => array(
                         'class' => 'tinymce',
                         'data-theme' => 'bbcode' // Skip it if you want to use default theme
@@ -35,7 +36,7 @@ class EntradaType extends AbstractType
                 'label' => ' '
             ))
             ->add('idcategoriablog','entity', array(
-                'label' => 'Elija una categoria',
+                'label' => 'Elija una categoria', 'required' => false,'empty_value'=>'Seleccione categoria...',
                 'class'=>'DgwebBundle:Categoriablog'
             ))
         ;

@@ -103,7 +103,7 @@ class ProyectoController extends Controller
 
         $form->add('submit','submit', array('label' => 'Guardar',
                                                'attr'=>
-                                                        array('class'=>'btn btn-success btn-sm')));
+                                                        array('class'=>'botonpanel btn-success ')));
 
         return $form;
     }
@@ -195,7 +195,7 @@ class ProyectoController extends Controller
 
         $form->add('submit','submit', array('label' => 'Modificar',
                                                'attr'=>
-                                                        array('class'=>'btn btn-success btn-sm')));
+                                                        array('class'=>'botonpanel btn-success')));
 
         return $form;
     }

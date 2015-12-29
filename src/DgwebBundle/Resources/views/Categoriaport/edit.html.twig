@@ -2,7 +2,33 @@
 {% block titulo %}Editar Categoria Blog{% endblock %}
 
 {% block contenido -%}
-    <h1>Categoriaport edit</h1>
+    
+  <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">  
+  
+    <div class="container-fluid">
+        <div class="row col-md-12">
+                {{ form_start(edit_form) }}
+                {{ form_errors(edit_form) }}
+               <div class="col-md-4 " style="margin-bottom:10px; margin-top:50px;">  
+                   
+               </div>
+               <div class="col-md-4 " style="margin-bottom:10px; margin-top:50px;">            
+                 {{ form_label(edit_form.nombre) }}
+                 {{ form_widget(edit_form.nombre) }}
+               </div>
+               <div class="col-md-4 " style="margin-bottom:10px; margin-top:50px;">  
+                   
+               </div> 
+             
+        </div>
+    </div>        
+      <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 10px;"> 
+       <center><a href="{{ path('admin_categoriaport') }}" class="botonpanel" id="cancelarNuevo">Regresar al listado</a> {{ form_widget(edit_form.submit) }} </center>
+      </div> 
+     
+ {{ form_end(edit_form) }}
+    
+   {# <h1>Categoriaport edit</h1>
 
     {{ form(edit_form) }}
 
@@ -13,5 +39,21 @@
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>
-</ul>
+</ul>#}
+{% endblock %}
+
+{% block javascripts_step %}
+    <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/jquery.bvalidator.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/bvalidator.lang.es.js')}}" ></script>
+   {# <script src="{{ asset('Resources/funciones_validacion/usuario.js') }}"></script>#}
+    <script src="{{ asset('Resources/js/Categoriaport.js') }}"></script>   
+ 
+     <script>
+            $(document).ready(function () {
+                //validarUsuario();
+                validarCategoriaport(); 
+            });
+        
+      </script>    
 {% endblock %}

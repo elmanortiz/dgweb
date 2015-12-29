@@ -1,7 +1,7 @@
 {% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
 
 
-{% block titulo %}Crear entrada{% endblock %}
+{% block titulo %}Crear blog{% endblock %}
 
 {% block contenido -%}
 
@@ -55,7 +55,7 @@
                 
              
                  <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 10px;"> 
-                   <center> {{ form_widget(form.submit) }} </center>
+                   <center><a href="{{ path('admin_entrada') }}" class="botonpanel" id="cancelarNuevo">Regresar al listado</a> {{ form_widget(form.submit) }} </center>
                  </div>   
 
                {# <div class="col-md-3">
@@ -86,13 +86,19 @@
     <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script>
     <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/jquery.bvalidator.js')}}"></script>
     <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/bvalidator.lang.es.js')}}" ></script>
-    <script src="{{ asset('Resources/funciones_validacion/usuario.js') }}"></script>
-    <script>
+    {#<script src="{{ asset('Resources/funciones_validacion/usuario.js') }}"></script>#}
+    <script src="{{ asset('Resources/js/Entrada.js') }}"></script>   
+    <script>     
+      {{ tinymce_init() }}
+    </script>
+        
+     <script>
             $(document).ready(function () {
-                validarUsuario();
+                //validarUsuario();
+                validarEntrada(); 
             });
-        {{ tinymce_init() }}
-        </script>
+        
+      </script>    
 {% endblock %}
 
  

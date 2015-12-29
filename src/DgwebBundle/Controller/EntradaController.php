@@ -103,7 +103,7 @@ class EntradaController extends Controller
 
         $form->add('submit','submit', array('label' => 'Guardar',
                                                'attr'=>
-                                                        array('class'=>'btn btn-success ')));
+                                                        array('class'=>'botonpanel btn-success ')));
 
         return $form;
     }
@@ -193,7 +193,9 @@ class EntradaController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit','submit', array('label' => 'Modificar',
+                                               'attr'=>
+                                                        array('class'=>'botonpanel btn-success ')));
 
         return $form;
     }

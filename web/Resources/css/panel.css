@@ -17,6 +17,8 @@
   text-decoration-line: none;
   text-decoration-style: solid;
   border: 0px; 
+  width: 100%;
+  text-align: center;
 }
 
 .botonpanel:hover {

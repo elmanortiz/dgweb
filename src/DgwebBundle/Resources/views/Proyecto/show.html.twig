@@ -40,7 +40,7 @@
                           <div class="row">
                             <div style="margin-top: 20px;"></div>
                             <p class="text-justify">
-                               {{ entity.contenido }}
+                               {{ entity.contenido | raw}}
                             </p> 
                           </div>
                        </div> 
@@ -65,7 +65,7 @@
     </table>
              
     <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 100px;"> 
-        <center><a href="{{ path('admin_proyecto') }}" class="btn btn-default btn-sm" id="cancelarNuevo">Regresar a proyectos</a></center>
+        <center><a href="{{ path('admin_proyecto') }}" class="botonpanel" id="cancelarNuevo">Regresar a proyectos</a></center>
     </div>           
       
  </div> 

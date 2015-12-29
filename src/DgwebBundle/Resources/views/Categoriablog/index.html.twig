@@ -3,40 +3,55 @@
     
 {% block contenido -%}
     
-
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('admin_categoriablog_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.nombre }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('admin_categoriablog_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('admin_categoriablog_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('admin_categoriablog_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+ <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">
+     
+     <div class="col-sm-12 col-md-12" style="margin-top: 5px; margin-bottom: 50px;"> 
+        <center><a href="{{ path('admin_categoriablog_new') }}" class="botonpanel" id="cancelarNuevo">Crear categoria</a></center>
+    </div>
+    
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="tablapanel">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <table class="table-bordered center" style="margin:0 auto; width: 40%;">
+                                    <thead>
+                                        <tr>
+                                             {# <th>Id</th>#}
+                                                <th>Nombre</th>
+                                                <th class="text-center">Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for entity in entities %}
+                                            <tr>
+                                                {#<td><a href="{{ path('admin_categoriablog_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>#}
+                                                  <td style="width: 60%;" class="text-left"><div style="padding: 0px 10px;">{{ entity.nombre }}</td>
+                                                <td>
+                                                 {#   <ul>
+                                                          <li>
+                                                                <a href="{{ path('admin_categoriablog_show', { 'id': entity.id }) }}">show</a>
+                                                            </li>
+                                                            <li>#}
+                                                                 <a href="{{ path('admin_categoriablog_edit', { 'id': entity.id }) }}"><center>Editar</center></a>
+                                                           {#  </li>
+                                                    </ul>#}
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+ 
     {% endblock %}

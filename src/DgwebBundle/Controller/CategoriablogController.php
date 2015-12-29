@@ -76,7 +76,9 @@ class CategoriablogController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit','submit', array('label' => 'Guardar',
+                                               'attr'=>
+                                                        array('class'=>'botonpanel btn-success ')));
 
         return $form;
     }
@@ -165,7 +167,9 @@ class CategoriablogController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit','submit', array('label' => 'Modificar',
+                                               'attr'=>
+                                                        array('class'=>'botonpanel btn-success ')));
 
         return $form;
     }

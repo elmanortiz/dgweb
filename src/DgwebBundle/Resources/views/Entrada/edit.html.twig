@@ -1,6 +1,6 @@
 {% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
 
-{% block titulo %}Editar entrada{% endblock %}
+{% block titulo %}Editar blog{% endblock %}
 
 {% block contenido -%}
 
@@ -53,8 +53,13 @@
                 </a>
             </li>
         </ul> -->
+                
+                
+                 <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 10px;"> 
+                    <center><a href="{{ path('admin_entrada') }}" class="botonpanel" id="cancelarNuevo">Regresar al listado</a> {{ form_widget(edit_form.submit) }} </center>
+                </div> 
 
-                <div class="col-md-3">
+                {#<div class="col-md-3">
                     
                 </div>
                 <div class="col-md-3">
@@ -67,7 +72,7 @@
                 </div>
                 <div class="col-md-3">
 
-                </div>
+                </div>#}
                 <div class="clearfix"></div>
 
                 {{ form_end(edit_form) }}
@@ -79,12 +84,17 @@
     <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script>
     <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/jquery.bvalidator.js')}}"></script>
     <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/bvalidator.lang.es.js')}}" ></script>
-    <script src="{{ asset('Resources/funciones_validacion/usuario.js') }}"></script>
+   {# <script src="{{ asset('Resources/funciones_validacion/usuario.js') }}"></script>#}
+    <script src="{{ asset('Resources/js/EditEntrada.js') }}"></script>  
     <script>
-        $(document).ready(function () {
-           // validarUsuario();
-        });
-        {{ tinymce_init() }} 
+       {{ tinymce_init() }} 
     </script>
+     <script>
+            $(document).ready(function () {
+                //validarUsuario();
+                validarEditEntrada(); 
+            });
+        
+      </script>    
 
 {% endblock %}

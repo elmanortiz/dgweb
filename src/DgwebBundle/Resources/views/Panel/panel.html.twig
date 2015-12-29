@@ -3,14 +3,31 @@
 {% block contenido %}
     <div class="container">
         <div class="row">
-            <div class="col-md-3"><div class="text-center"><a href="{{ path('admin_proyecto') }}">Proyectos</a></div></div>
-            <div class="col-md-3"><div class="text-center"><a href="{{ path('admin_proyecto_new') }}">Crear proyecto</a></div></div>
-            <div class="col-md-3"><div class="text-center"><a href="{{ path('admin_indexadmin') }}">Editar proyecto</a></div></div>
-             <div class="col-md-3"><div class="text-center"><a href="{{ path('admin_categoriaport') }}">Gestion Categoria Portafolio</a></div></div>
-            <div class="col-md-3"><div class="text-center"><a href="{{ path('admin_entrada_new') }}">Crear blog</a></div></div>
-            <div class="col-md-3"><div class="text-center"><a href="{{ path('admin_categoriablog') }}">Gestion Categoria Blog</a></div></div>
-           
             
+       <div class="col-sm-12 col-md-4" style="margin-top: 1px; margin-bottom: 1px;"> 
+          <a href="{{ path('admin_proyecto_new') }}" class="botonpanel">Crear proyecto</a>
+       </div> 
+       <div class="col-sm-12 col-md-4" style="margin-top: 1px; margin-bottom: 1px;"> 
+          <a href="{{ path('admin_proyecto') }}" class="botonpanel" >Proyectos creados</a>
+       </div> 
+       
+        <div class="col-sm-12 col-md-4" style="margin-top: 1px; margin-bottom: 1px;"> 
+          <a href="{{ path('admin_categoriaport') }}" class="botonpanel">Gestion categoria portafolio</a>
+       </div> 
+       <div class="col-sm-12 col-md-4" style="margin-top: 1px; margin-bottom: 1px;"> 
+          <a href="{{ path('admin_indexadmin') }}" class="botonpanel">Editar proyecto</a>
+       </div>        
+      
+      {# <div class="col-sm-12 col-md-4" style="margin-top: 1px; margin-bottom: 1px;"> 
+          <a href="{{ path('admin_entrada_new') }}" class="botonpanel">Crear blog</a>
+       </div>#}
+        <div class="col-sm-12 col-md-4" style="margin-top: 1px; margin-bottom: 1px;"> 
+          <a href="{{ path('admin_entrada') }}" class="botonpanel">Gestionar blog</a>
+       </div>
+        <div class="col-sm-12 col-md-4" style="margin-top: 1px; margin-bottom: 1px;"> 
+          <a href="{{ path('admin_categoriablog') }}" class="botonpanel">Gestion categoria blog</a>
+       </div>
+             
         </div>
     </div>
 {% endblock %}

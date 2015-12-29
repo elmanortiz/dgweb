@@ -15,7 +15,8 @@ class CategoriablogType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
+            ->add('nombre','text', array('label'=>'Nombre','required'=>false,
+                    'attr'=>array('class'=>'form-control nombreCategoriablog' )))
         ;
     }
     
