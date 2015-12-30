@@ -259,7 +259,7 @@ hr {
   height: 100vh; line-height: 100vh; 
   text-align: center; 
   position: relative; 
-  background: url(http://www.2035themes.com/bubbles/wp/wp-content/uploads/2014/03/Slider-Default-2.jpg) no-repeat center center fixed;
+  background: url('http://www.2035themes.com/bubbles/wp/wp-content/uploads/2014/03/Slider-Default-2.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -313,49 +313,4 @@ hr {
 
 a:hover, a:active, a:focus {
   outline: 0;
-}
-
-/*Estilo para Proyectos/Portfolio*/
-
-.contenedor-titulo {
-  position: relative; 
-  width: 100%;
-  color: #FFF;
-}
-
-/*Titulos PC*/
-.margenes-titulo {
-  padding-top: 80px; 
-  padding-bottom: 140px;
-}
-
-/*Titulos Movil*/
-.margenes-titulo-m {
-  padding-top: 40px; 
-  padding-bottom: 80px;
-}
-
-/*PC*/
-.titulo-proyecto {
-  position: absolute; left: 0; width: 100%; font-size: 4.0em; margin-bottom: 0px;
-}
-
-.categoria-proyecto {
-  position: absolute; left: 0; width: 100%; font-size: 1.5em; margin-top: 70px;
-}
-
-/*Movil*/
-.titulo-proyecto-m {
-  position: absolute; left: 0; width: 100%; font-size: 2.0em; margin-bottom: 0px;
-}
-
-.categoria-proyecto-m {
-  position: absolute; left: 0; width: 100%; font-size: 1em; margin-top: 80px;
-}
-
-.imagen-portafolio {
-  width: 100%;
-  max-width: 100%;
-  margin-top: 15px;
-  margin-bottom: 15px;
 }

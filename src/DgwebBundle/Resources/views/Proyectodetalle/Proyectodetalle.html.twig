@@ -2,65 +2,87 @@
 
 {% block contproyectodetalle -%}
     {#{% include 'DgwebBundle:Layout:instagram.html.twig'%}#}
-    <div class="container-fluid">
-        <div class="row">
-            <img src="{{ asset('Resources/img/proyectodetalle/celulas.png')}}" style="width: 100%;">
-        </div>
-    </div>
+        <!-- Inicio de Codigo de Titulo + Categoria de Proyecto + Foto -->
+    <div class="container-fluid" style="background-color: #ACDCDC;"> <!-- Este Color de la izquierda tiene que ser seleccionado por los disenadores  -- >
+    <!-- Image and Text Holder -->
     <div class="container">
-        <div class="row">
-            <div style="margin-top: 20px;"></div>
-            <p class="text-justify">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
-                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
-                adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis 
-                nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea 
-                voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-            </p>
-            <p class="text-justify">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
-                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
-                adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis 
-                nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea 
-                voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-            </p>
-            <p class="text-justify">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
-                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
-                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
-                adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis 
-                nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea 
-                voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-            </p>
-            <div class="col-md-12 hr"></div>
-            <div class="clearfix"></div>
-            
-            <div class="">
-                <img src="{{ asset('Resources/img/proyectodetalle/celulas.png')}}" style="width: 100%;">
-            </div>
-            <div class="" style="margin-top: 50px;">
-                <img src="{{ asset('Resources/img/proyectodetalle/celulas.png')}}" style="width: 100%;">
-            </div>
-            <div class="" style="margin-top: 50px;">
-                <img src="{{ asset('Resources/img/proyectodetalle/celulas.png')}}" style="width: 100%;">
-            </div>
-            <div class="" style="margin-top: 50px;">
-                <img src="{{ asset('Resources/img/proyectodetalle/celulas.png')}}" style="width: 100%;">
-            </div>
-            <div class="" style="margin-top: 50px;">
-                <img src="{{ asset('Resources/img/proyectodetalle/celulas.png')}}" style="width: 100%;">
-            </div>
-            
-            <div class="col-md-12 hr"></div>
-            
-            <div style="margin-top: 50px;">
-                <p>
-                <h3>Coments redes sociales</h3>
-                </p>
-            </div>
-            
+      <div class="contenedor-titulo" style="color: blue;"> <!-- poner aqui con un style="color: #xxxxxx;"  -->
+        <!-- Titulo de PC -->
+        <div class="margenes-titulo hidden-xs hidden-sm"> <!-- El Color de los titulos tambien tiene que ser seleccionado por los disenadores -->
+          <p class="text-center titulo-proyecto">TEA TRUNK</p>  <!-- Este titulo los disenadores lo ponen -->
+          <p class="text-center categoria-proyecto">PRODUCT PHOTOGRAPHY</p>   <!-- Esta es la categoria que ingreso el proyecto -->
         </div>
+        <!-- Titulo de Movil -->
+        <div class="margenes-titulo-m hidden-md hidden-lg"> <!-- El Color de los titulos tambien tiene que ser seleccionado por los disenadores -->
+          <p class="text-center titulo-proyecto-m">TEA TRUNK ALOHA HAWAII</p>  <!-- Este titulo los disenadores lo ponen -->
+          <p class="text-center categoria-proyecto-m">PRODUCT PHOTOGRAPHY</p> <!-- Esta es la categoria que ingreso el proyecto, abilidad de poder agregar un style="margin-top: xpx;" -->
+        </div>
+        <!-- Inicio de Foto -->
+        <img src="{{asset('Photos/proyecto/portfolio.png')}}" style="width: 100%; max-width: 100%;"> <!-- Esta es la foto inicial del proyecto -->
+      </div>
+      </div>
+    </div> <!-- Fin de Contenedor que sostiene, foto, titulo y categoria de proyecto -->
+
+    <!-- Inicio de Descripcion de Proyecto -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1 hidden-xs hidden-sm"></div> <!-- Esta columna se esconde en movil -->
+        <div class="col-md-10 col-xs-12 col-sm-12"> <!-- Esta columna tiene todas las imagenes, se convierte en 12 en movil -->
+          <!-- Texto para PC -->
+          <div style="padding: 30px;" class="hidden-xs hidden-sm"><p class="text-justify">
+            For a brand as unique as Tea Trunk, we wanted to avoid doing the cliched "natural products" 
+            shots - with leaves, warm wood backgrounds and out of focus cups. After talking to dozens of
+            product photographers, we decided that we'd have to do the shoot ourselves to be able to 
+            realize our vision for the look of the brand.
+            </br></br>
+            So we dusted our studio lights and set up our own mini photo studio for this shoot. We 
+            started off with a clear mandate - the product had to be the hero and the photographs had 
+            to have a distinct aesthetic - something that would carry forward the visual language of 
+            the brand and set it apart from the dozens of tea brands in the market.
+            </br></br>
+            18 hours of shooting, 1000+ photographs and hundreds of hours of painstaking editing later, 
+            we had something we loved!
+          </p></div>
+          <!-- Texto para Movil -->
+          <div style="padding: 20px 20px;" class="hidden-md hidden-lg"><p class="text-justify">
+            For a brand as unique as Tea Trunk, we wanted to avoid doing the cliched "natural products" 
+            shots - with leaves, warm wood backgrounds and out of focus cups. After talking to dozens of
+            product photographers, we decided that we'd have to do the shoot ourselves to be able to 
+            realize our vision for the look of the brand.
+            </br></br>
+            So we dusted our studio lights and set up our own mini photo studio for this shoot. We 
+            started off with a clear mandate - the product had to be the hero and the photographs had 
+            to have a distinct aesthetic - something that would carry forward the visual language of 
+            the brand and set it apart from the dozens of tea brands in the market.
+            </br></br>
+            18 hours of shooting, 1000+ photographs and hundreds of hours of painstaking editing later, 
+            we had something we loved!
+          </p></div>
+        </div>
+        <div class="hidden-md hidden-lg" style="margin-top: 30px;"></div>
+        <div class="col-md-1 hidden-xs hidden-sm"></div> <!-- Esta columna se esconde en movil -->
+      </div>
+    </div>
+
+    <!-- Barra Espaciadora entre Titulo y Imagenes -->
+    <div class="container">
+      <div style="height: 2px; background-color: #D6D6D6; margin-bottom: 20px;"></div>
+    </div>
+
+    <!-- Inicio de Imagenes de Proyecto -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1 hidden-xs hidden-sm"></div> <!-- Esta columna se esconde en movil -->
+        <div class="col-md-10 col-xs-12 col-sm-12"> <!-- Esta columna tiene todas las imagenes, se convierte en 12 en movil -->
+          <img src="{{asset('Photos/proyecto/1.png')}}" class="imagen-portafolio">
+          <img src="{{asset('Photos/proyecto/2.png')}}" class="imagen-portafolio">
+          <img src="{{asset('Photos/proyecto/3.png')}}" class="imagen-portafolio">
+          <img src="{{asset('Photos/proyecto/4.png')}}" class="imagen-portafolio">
+          <img src="{{asset('Photos/proyecto/5.png')}}" class="imagen-portafolio">
+          <img src="{{asset('Photos/proyecto/6.png')}}" class="imagen-portafolio">
+          <img src="{{asset('Photos/proyecto/7.png')}}" class="imagen-portafolio">
+        </div>
+        <div class="col-md-1 hidden-xs hidden-sm"></div> <!-- Esta columna se esconde en movil -->
+      </div>
     </div>
 {% endblock %}
