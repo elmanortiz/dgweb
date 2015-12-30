@@ -17,11 +17,32 @@
   text-decoration-line: none;
   text-decoration-style: solid;
   border: 0px; 
+}
+
+.botonpane2 {
+  background-color: #262626;
+  display: inline-block;
+  cursor: pointer;
+  color: #FFD24C;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 76px;
+  padding-top: 10px;
+  padding-right: 76px;
+  padding-bottom: 10px;
+  padding-left: 76px;
+  text-decoration: none;
+  text-decoration-color: -moz-use-text-color;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  border: 0px; 
   width: 100%;
   text-align: center;
 }
 
-.botonpanel:hover {
+.botonpane2:hover {
   background: #FFD24C;
   color: #262626;
   text-decoration: none;

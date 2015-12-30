@@ -20,11 +20,11 @@
     <div class="container text-center" style="margin-bottom: 0px;">
         <div class="row">
             <div class="col-md-3 text-center">
-                <div class="botonpanel active " id="0">Todas</div>
+                <div class="botonpane2 active " id="0">Todas</div>
             </div>
             {% for idCategoriaport in categoriasProyectos %}
                 <div class="col-md-3">
-                    <div class="botonpanel inactive" id="{{idCategoriaport.id}}" >
+                    <div class="botonpane2 inactive" id="{{idCategoriaport.id}}" >
                         {{idCategoriaport.nombre}}
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                         $(document).ready(function () {
                             var id = 0;
 
-                            $('.botonpanel').on('click',function(){
+                            $('.botonpane2').on('click',function(){
                                  var idNuevo = $(this).attr('id');                           
                                
                                 $( ".gallery-col" ).each(function( index, element ) {
