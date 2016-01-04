@@ -26,4 +26,4 @@ $('.cpx').
     $('form').bValidator(optionsRed);
 	
  }	
-	
+
