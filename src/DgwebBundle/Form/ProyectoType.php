@@ -16,7 +16,7 @@ class ProyectoType extends AbstractType
     {
         $builder
             ->add('titulo','text', array('label'=>'Titulo','required'=>false,
-                    'attr'=>array('class'=>'form-control')))
+                    'attr'=>array('class'=>'form-control tituloProyecto')))
             ->add('contenido','textarea', array('label'=>'Contenido','required'=>false,
                     'attr'=>array('class' => 'tinymce',
                         'data-theme' => 'bbcode'))
@@ -30,7 +30,15 @@ class ProyectoType extends AbstractType
                 'by_reference' => false,
                 'allow_add' => true,
                 'allow_delete' => true,
-                ))                     
+                ))   
+                
+           ->add('colorFondo','text', array('label'=>'Color de fondo','required'=>false,
+                    'attr'=>array('class'=>'cfondo')))
+           ->add('colorTitulo','text', array('label'=>'Color de titulo','required'=>false,
+                    'attr'=>array('class'=>'ctitulo')))
+           ->add('cantidadPx','text', array('label'=>'Cantidad de px','required'=>false,
+                    'attr'=>array('class'=>'cpx'))) 
+                        
         ;
     }
     

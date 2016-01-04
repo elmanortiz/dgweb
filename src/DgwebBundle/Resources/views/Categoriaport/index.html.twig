@@ -1,5 +1,5 @@
 {% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
-{% block titulo %}Editar Categoria Portafolio{% endblock %}
+{% block titulo %}Gestionar Categoria Portafolio{% endblock %}
 
 {% block contenido -%}
     {#<h1>Categoriaport list</h1>#}
@@ -23,7 +23,7 @@
                                     <thead>
                                         <tr>
                                              {# <th>Id</th>#}
-                                                <th>Nombre</th>
+                                                <th class="text-center">Categoria</th>
                                                 <th class="text-center">Acción</th>
                                         </tr>
                                     </thead>
@@ -38,7 +38,7 @@
                                                                 <a href="{{ path('admin_categoriablog_show', { 'id': entity.id }) }}">show</a>
                                                             </li>
                                                             <li>#}
-                                                                 <a href="{{ path('admin_categoriablog_edit', { 'id': entity.id }) }}"><center>Editar</center></a>
+                                                                 <a href="{{ path('admin_categoriaport_edit', { 'id': entity.id }) }}"><center>Editar</center></a>
                                                            {#  </li>
                                                     </ul>#}
                                                 </td>

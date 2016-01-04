@@ -53,7 +53,7 @@ class CategoriaportController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_categoriaport_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_categoriaport', array('id' => $entity->getId())));
         }
 
         return array(
@@ -138,7 +138,7 @@ class CategoriaportController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('DgwebBundle:Categoriaport')->find($id);
-
+       
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Categoriaport entity.');
         }

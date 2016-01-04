@@ -1,5 +1,5 @@
 {% extends 'DgwebBundle:Panel:layoutpanel.html.twig' %}
-{% block titulo %}Blog{% endblock %}
+{% block titulo %}Gestionar Blog{% endblock %}
 {% block contenido -%}
 
     <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">
@@ -23,7 +23,7 @@
                                             <tr>
                                                 {#<th>Id</th>#}
                                                 <th class="text-center">Titulo</th>
-                                                <th class="text-center">Escritapor</th>
+                                                <th class="text-center">Escrita por</th>
                                                 <th class="text-center">Fecha</th>
                                                 <th class="text-center">Contenido</th>
                                                 <th class="text-center">Acción</th>
@@ -35,7 +35,7 @@
                                                     {#<td><a href="{{ path('admin_entrada_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>#}
                                                     <td class="text-center">{{ entity.titulo }}</td>
                                                     <td class="text-center">{{ entity.escritapor }}</td>
-                                                    <td class="text-center">{% if entity.fecha %}{{ entity.fecha|date('Y-m-d') }}{% endif %}</td>
+                                                    <td class="text-center">{% if entity.fecha %}{{ entity.fecha|date('d-m-Y') }}{% endif %}</td>
                                                     <td style="width: 60%;" class="text-justify"><div style="padding: 0px 10px;">{{ entity.contenido | raw}}</div></td>
                                                     <td>
                                                         {# <ul>

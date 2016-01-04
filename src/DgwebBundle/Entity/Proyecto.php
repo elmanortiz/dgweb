@@ -38,6 +38,27 @@ class Proyecto
      */
     private $contenido;
     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="color_fondo", type="string", length=10000, nullable=true)
+     */
+    private $colorFondo;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="color_titulo", type="string", length=10000, nullable=true)
+     */
+    private $colorTitulo;
+    
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="cantidad_px", type="integer", length=10000, nullable=true)
+     */
+    private $cantidadPx;
+    
     
      /**
      * @Assert\File(maxSize="6000000")
@@ -111,6 +132,78 @@ class Proyecto
     public function getContenido()
     {
         return $this->contenido;
+    }
+    
+     /**
+     * Set colorFondo
+     *
+     * @param string $colorFondo
+     *
+     * @return Proyecto
+     */
+    public function setColorFondo($colorFondo)
+    {
+        $this->colorFondo = $colorFondo;
+
+        return $this;
+    }
+
+    /**
+     * Get colorFondo
+     *
+     * @return string
+     */
+    public function getColorFondo()
+    {
+        return $this->colorFondo;
+    }
+    
+     /**
+     * Set colorTitulo
+     *
+     * @param string $colorTitulo
+     *
+     * @return Proyecto
+     */
+    public function setColorTitulo($colorTitulo)
+    {
+        $this->colorTitulo = $colorTitulo;
+
+        return $this;
+    }
+
+    /**
+     * Get colorTitulo
+     *
+     * @return string
+     */
+    public function getColorTitulo()
+    {
+        return $this->colorTitulo;
+    }
+    
+    /**
+     * Set cantidadPx
+     *
+     * @param integer $cantidadPx
+     *
+     * @return Proyecto
+     */
+    public function setCantidadPx($cantidadPx)
+    {
+        $this->cantidadPx = $cantidadPx;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidadPx
+     *
+     * @return integer
+     */
+    public function getCantidadPx()
+    {
+        return $this->cantidadPx;
     }
     
      /**

@@ -1,39 +1,86 @@
 {% extends 'DgwebBundle:Layout:layout.html.twig' %}
 
-{% block contportafolio -%}
+{% block contproyectodetalle -%}
 
-   <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">  
+   {#<div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">  #}
 		
    
-        <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">{{ entity.titulo }}</h2>
+       {# <h2 class="text-center" style="color: #828282; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">{{ entity.titulo }}</h2>
         <div style="width: 60px; border-top: 2px solid #09F; margin-left: auto; margin-right: auto; margin-top: 10px;"></div></h2>     
-	<!-- Footer Desktop -->
+	<!-- Footer Desktop -->#}
         
-   </div> 
-
-    <table class="record_properties">
-        <tbody>
+   {#</div> #}
+{#{{ entity.colorFondo }}
+{{ entity.colorTitulo }}
+{{ entity.cantidadPx }}#}
+    {#<table class="record_properties">
+        <tbody>#}
          {#   <tr>
                 <th>Id</th>
                 <td>{{ entity.id }}</td>
             </tr> #}
-            <tr>
+            {#<tr>#}
              {#   <th>Titulo</th> 
                  <h2 class="text-center" style="color: #828282; margin-top: 30px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">{{ entity.titulo }}</h2>
                  <td>{{ entity.titulo }}</td> #}
-            </tr>
-            <tr>
+           {# </tr>
+            <tr>#}
              {#   <th>Contenido</th> #}
-                 <h2 class="text-center" style="color: #262626; margin-top: 30px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">{{ entity.idCategoriaport }}</h2>
+                {# <h2 class="text-center" style="color: #262626; margin-top: 30px; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 18px;">{{ entity.idCategoriaport }}</h2>#}
              {#   <td>{{ entity.contenido }}</td> #}
-            </tr>
-             <tr>
+           {# </tr>
+             <tr>#}
                  
            {% for key, placa in entity.placas %}
                
                 {%  if key==0   %}  
+                    
+                    
+                   <div class="container-fluid" style="background-color: #{{ entity.colorFondo }};"> <!-- Este Color de la izquierda tiene que ser seleccionado por los disenadores  -- >
+                    <!-- Image and Text Holder -->
+                    <div class="container">
+                      <div class="contenedor-titulo" style="color: #{{ entity.colorTitulo }};"> <!-- poner aqui con un style="color: #xxxxxx;"  -->
+                        <!-- Titulo de PC -->
+                        <div class="margenes-titulo hidden-xs hidden-sm"> <!-- El Color de los titulos tambien tiene que ser seleccionado por los disenadores -->
+                          <p class="text-center titulo-proyecto">{{ entity.titulo }}</p>  <!-- Este titulo los disenadores lo ponen -->
+                          <p class="text-center categoria-proyecto">{{ entity.idCategoriaport }}</p>   <!-- Esta es la categoria que ingreso el proyecto -->
+                        </div>
+                        <!-- Titulo de Movil -->
+                        <div class="margenes-titulo-m hidden-md hidden-lg"> <!-- El Color de los titulos tambien tiene que ser seleccionado por los disenadores -->
+                          <p class="text-center titulo-proyecto-m">{{ entity.titulo }}</p>  <!-- Este titulo los disenadores lo ponen -->
+                          <p class="text-center categoria-proyecto-m" style="margin-top: {{ entity.cantidadPx }}px;">{{ entity.idCategoriaport }}</p> <!-- Esta es la categoria que ingreso el proyecto, abilidad de poder agregar un style="margin-top: xpx;" -->
+                        </div>
+                        <!-- Inicio de Foto -->
+                        <img src="{{ asset('Photos/proyecto/')}}{{entity.placas[key].imagen}}" alt="dummy image" style="width: 100%; max-width: 100%;"> <!-- Esta es la foto inicial del proyecto -->
+                      </div>
+                      </div>
+                    </div> <!-- Fin de Contenedor que sostiene, foto, titulo y categoria de proyecto -->
+                    
+                     <!-- Inicio de Descripcion de Proyecto -->
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-1 hidden-xs hidden-sm"></div> <!-- Esta columna se esconde en movil -->
+                        <div class="col-md-10 col-xs-12 col-sm-12"> <!-- Esta columna tiene todas las imagenes, se convierte en 12 en movil -->
+                          <!-- Texto para PC -->
+                          <div style="padding: 30px;" class="hidden-xs hidden-sm"><p class="text-justify">
+                            {{ entity.contenido | raw}}
+                          </p></div>
+                          <!-- Texto para Movil -->
+                          <div style="padding: 20px 20px;" class="hidden-md hidden-lg"><p class="text-justify">
+                            {{ entity.contenido | raw}}
+                          </p></div>
+                        </div>
+                        <div class="hidden-md hidden-lg" style="margin-top: 30px;"></div>
+                        <div class="col-md-1 hidden-xs hidden-sm"></div> <!-- Esta columna se esconde en movil -->
+                      </div>
+                    </div>
 
-                  <div class="container-fluid">
+                 <!-- Barra Espaciadora entre Titulo y Imagenes -->
+                        <div class="container">
+                          <div style="height: 2px; background-color: #D6D6D6; margin-bottom: 20px;"></div>
+                        </div>    
+
+                 {# <div class="container-fluid">
                       <div class="row">
                           <img class="embed-responsive-item" style="width: 100%; margin-top: 30px;" itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{entity.placas[key].imagen}}" alt="dummy image">
                        <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">  
@@ -45,28 +92,43 @@
                           </div>
                        </div> 
                       </div>
-                  </div>  
+                  </div>  #}
                 
                 {% else %}
-                    <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">  
+                    
+                      
+
+                        <!-- Inicio de Imagenes de Proyecto -->
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-1 hidden-xs hidden-sm"></div> <!-- Esta columna se esconde en movil -->
+                            <div class="col-md-10 col-xs-12 col-sm-12"> <!-- Esta columna tiene todas las imagenes, se convierte en 12 en movil -->
+                               <img class="embed-responsive-item" style="width: 100%; margin-top: 30px;" itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{entity.placas[key].imagen}}" alt="dummy image">
+                            </div>
+                            <div class="col-md-1 hidden-xs hidden-sm"></div> <!-- Esta columna se esconde en movil -->
+                          </div>
+                        </div>
+                    
+                    
+                   {# <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">  
                          <div class="col-md-12 hr"></div>
                         <img class="embed-responsive-item" style="width: 100%; margin-top: 30px;" itemprop="thumbnail" src="{{ asset('Photos/proyecto/')}}{{entity.placas[key].imagen}}" alt="dummy image">
-                    </div> 
+                    </div> #}
                 {% endif %}
                 
            {% endfor %} 
            
-        <div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">      
+        {#<div class="container" style="background-color: #F6F6F6; padding-top:10px; padding-bottom: 1px;">      
           <div class="col-md-12 hr"></div>   
-        </div>     
+        </div>    #} 
             
-             </tr>
+            {# </tr>
         </tbody>
-    </table>
+    </table>#}
              
     <div class="col-sm-12 col-md-12" style="margin-top: 50px; margin-bottom: 100px;"> 
         <center><a href="{{ path('admin_proyecto') }}" class="botonpanel" id="cancelarNuevo">Regresar a proyectos</a></center>
     </div>           
       
- </div> 
+
 {% endblock %}
