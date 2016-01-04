@@ -23,7 +23,7 @@
                         
                         float: right;
                         margin-bottom: 50px;
-                        top: 810px;
+                        top: 885px;
                         left: 367px;
                     }
 
@@ -98,13 +98,23 @@
                  {{ form_row(edit_form.titulo) }}
                  {{ form_widget(edit_form.titulo) }}
             </div>  
-            <div class="col-md-12 " style="margin-bottom:10px">
+            
+             <div class="col-md-12 " style="margin-bottom:10px">
+               {{ form_row(edit_form.contenido) }}
+               {{ form_widget(edit_form.contenido) }}
+             </div>
+             <div class="col-md-3 "  style="margin-bottom:50px; margin-top:50px;">
                {{ form_row(edit_form.idCategoriaport) }}
                {{ form_widget(edit_form.idCategoriaport) }}
             </div>
-             <div class="col-md-12 " style="margin-bottom:50px">
-               {{ form_row(edit_form.contenido) }}
-               {{ form_widget(edit_form.contenido) }}
+             <div class="col-md-3 " style="margin-bottom:50px; margin-top:50px;">
+                 {{ form_row(edit_form.colorFondo) }}
+             </div>
+             <div class="col-md-3 " style="margin-bottom:50px; margin-top:50px;">
+                 {{ form_row(edit_form.colorTitulo) }}
+             </div>
+             <div class="col-md-3 " style="margin-bottom:50px; margin-top:50px;">
+                 {{ form_row(edit_form.cantidadPx) }}
              </div>
              
              
@@ -146,9 +156,15 @@
 
 
 {% block javascripts_step %}
-    <script src="{{ asset('Resources/js/Proyecto.js') }}"></script>  
+    {#<script src="{{ asset('Resources/js/Proyecto.js') }}"></script> #} 
    {# <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script> #}
-   {{parent()}}
+  {# {{parent()}}#}
+  
+  
+    <script type="text/javascript" src="{{ asset('Resources/jquery/jquery_1.11.3.js')}}"></script>  
+    <script src="{{ asset('Resources/js/EditProyecto.js') }}"></script>   
+    <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/jquery.bvalidator.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('Resources/bValidator-0.73/bvalidator.lang.es.js')}}" ></script>
    
     <script>
       {{ tinymce_init() }}
@@ -218,7 +234,7 @@ jQuery(document).ready(function() {
         // $('.btn_radio').attr('name', 'rol_predet');
     });
 
-//validarProyecto();
+validarEditProyecto();
     
 });
 
@@ -245,7 +261,7 @@ function addTagForm(collectionHolder, $newLinkLi) {
 
     // add a delete link to the new form
     addTagFormDeleteLink($newFormLi);
-     //validarProyecto();
+     validarEditProyecto();
     $('.btn_radio').click(function(event) {
         /* Act on the event */
         var id = $(this).attr('id');
