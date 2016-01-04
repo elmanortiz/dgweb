@@ -1,5 +1,30 @@
 {% extends 'DgwebBundle:Layout:layout.html.twig' %}
 
+{%block head -%} 
+            {% block title -%}<title>{% block titlename -%}Digitality Garage | Think, Define, Design.{% endblock %}</title>{% endblock %}
+            {% block meta -%}
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <!-- Las 3 meta tags de arriba siempre tienen que incluirse y todo lo demas tiene que venir despues -->
+                <meta name="description" content="We are a great Agency, check us out.">
+            {% endblock%}
+
+            <!-- Declaracion de Archivo de Bootstrap -->	
+            {% block css -%}    
+                {#<link rel="stylesheet" href="{{ asset('Resources/bValidator-0.73/themes/bvalidator.theme.bootstrap.rt.css') }}" />#}
+                <link rel="stylesheet" href="{{ asset('Resources/css/bootstrap.css') }}" />
+                <link rel="stylesheet" href="{{ asset('Resources/css/style.css') }}" />
+                <!-- Fonts -->
+                <link href="{{ asset('https://fonts.googleapis.com/css?family=Montserrat:400,700')}}" rel='stylesheet' type='text/css'>
+                <!-- Favicon -->
+                <link rel="shortcut icon" href="{{ asset('Resources/img/favicon/flex-logo.png')}}" type="image/x-icon">
+                <link rel="icon" href="{{ asset('Resources/img/favicon/flex-logo.png')}}" type="image/x-icon">
+                <link rel="stylesheet" href="{{ asset('Resources/css/panel.css') }}" />   
+                <link href="{{asset('Resources/css/team.css')}}" rel="stylesheet">
+            {% endblock %}
+        {% endblock%}
+
 {% block contteam -%}            
     {% include 'DgwebBundle:Team:contenido.html.twig'%}
 {% endblock %}

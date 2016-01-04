@@ -3,23 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Controller/ProyectoController.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/web/Resources/js/Categoriaport.js</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Categoriablog/new.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Categoriaport/edit.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Categoriaport/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Controller/ProyectodetalleController.php</file>
             <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Proyecto/new.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/web/Resources/css/panel.css</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Categoriaport/new.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Proyecto/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Panel/botonespanel.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/web/Resources/js/Categoriablog.js</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Categoriablog/edit.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Form/CategoriaportType.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Categoriablog/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Form/CategoriablogType.php</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Entrada/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Panel/panel.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Proyectodetalle/Proyectodetalle.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Layout/layoutpanel.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Layout/layout.html.twig</file>
+            <file>file:/C:/xampp/htdocs/dgweb/src/DgwebBundle/Resources/views/Proyectodetalle/Proyectodetalle_old.html.twig</file>
         </group>
     </open-files>
 </project-private>
